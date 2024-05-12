@@ -1,0 +1,229 @@
+/* General Styles */
+/* General Styles */
+body {
+  font-family: 'Open Sans', sans-serif; /* Clean and modern font */
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5; /* Light gray background */
+}
+
+a {
+  color: #333; /* Dark gray for links */
+  text-decoration: none;
+  padding: 10px 15px;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #9933cc; /* Rich purple for links on hover */
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+/* Navigation Bar (Sidebar) Styles (Consider for future implementation) */
+/* You can uncomment and customize this section if you want a sidebar */
+
+/* .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 200px;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  padding: 15px 20px;
+  transition: color 0.3s ease-in-out;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+nav a:last-child {
+  border-bottom: none;
+} */
+
+/* Main Content Styles */
+.main-content {
+  padding: 20px;
+  width: 100%; /* Adjust for sidebar if implemented */
+}
+
+/* Header Styles */
+header {
+  background-color: #fff; /* White header background */
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+h1 {
+  font-size: 2.5em; /* Larger headline */
+  margin: 0;
+  color: #333; /* Dark gray for headline */
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 50px;
+  background-color: #9933cc; /* Rich purple hero background */
+  color: #fff; /* White text for better readability */
+}
+
+.hero img {
+  max-width: 100%; /* Adjust image size as needed */
+}
+
+/* Content Sections */
+.about-us,
+.contact,
+.products {
+  color: #333; /* Dark gray for text */
+  margin: 50px 0; /* Adjust margin for spacing */
+  padding: 30px;
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #fff; /* White background for content sections */
+}
+
+h2 {
+  font-size: 1.8em; /* Larger section titles */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #9933cc; /* Same rich purple for section titles */
+}
+
+/* Call to Action (Optional) */
+.call-to-action {
+  text-align: center;
+  padding: 20px;
+  background-color: #eee; /* Light gray background */
+}
+
+.call-to-action a {
+  background-color: #9933cc; /* Rich purple button */
+  color: #fff; /* White text for button */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px; /* Rounded corners for button */
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+
+/* Content Sections */
+.about-us,
+.contact,
+.products {
+  color: #333; /* Darker text for better contrast */
+  margin: 50px 0; /* Adjust margin for spacing */
+  padding: 30px;
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #f5f5f5; /* Light background for content sections */
+}
+
+h2 {
+  font-size: 1.8em; /* Larger section titles */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #9933cc; /* Same rich purple for section titles */
+}
+
+.contact form {
+  display: flex; /* Arrange form elements horizontally */
+  flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
+  width: 100%; /* Form spans full width */
+}
+
+.contact label {
+  display: block; /* Display labels on separate lines */
+  margin-bottom: 5px; /* Add space between label and input */
+  width: 100%; /* Labels span full width */
+}
+
+.contact input[type="text"],
+.contact input[type="email"] {
+  width: 100%; /* Inputs span full width */
+  padding: 10px;
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 3px; /* Rounded corners for inputs */
+  font-size: 16px; /* Consistent font size */
+}
+
+.contact textarea {
+  width: 100%; /* Textarea spans full width */
+  height: 150px; /* Adjust height as needed */
+  padding: 10px;
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 3px; /* Rounded corners for textarea */
+  font-size: 16px; /* Consistent font size */
+}
+
+.contact input[type="submit"] {
+  background-color: #9933cc; /* Rich purple for submit button */
+  color: #fff; /* White text for better contrast */
+  padding: 10px 20px;
+  border: none; /* Remove default button border */
+  border-radius: 3px; /* Rounded corners for button */
+  cursor: pointer; /* Indicate clickable element */
+  transition: background-color 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.contact input[type="submit"]:hover {
+  background-color: #660099; /* Darker purple on hover */
+}
+/* Remove inline styles from `contact` and `h2` elements */
+
+/* Product Cards */
+.product-card {
+  float: left; /* Removed for responsive design */
+  margin: 10px;
+  width: 30%; /* Adjust width as needed for responsiveness */
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(1.02); /* Subtle hover effect */
+}
+
+.product-card img {
+  width: 100%; /* Ensure images fill the card width */
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+/* Responsive Design (consider using a media query for smaller screens) */
+@media only screen and (max-width: 768px) {
+  /* Adjust styles for smaller screens, like making product cards stack instead of float */
+  .product-card {
+    float: none; /* Stack product cards on smaller screens */
+    width: 100%; /* Make cards take full width */
+    margin: 20px auto; /* Center cards horizontally */
+  }
+}
