@@ -1,8 +1,8 @@
 /* General Styles */
 body {
   font-family: 'Open Sans', sans-serif;
-  margin: 0;
-  padding: 0;
+  margin: 6px;
+  padding: 6px;
   background-color: #f5f5f5;
 }
 
@@ -11,7 +11,7 @@ a {
   text-decoration: none;
   padding: 10px 15px;
   font-weight: bold;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.8s ease-in-out;
 }
 
 a:hover {
@@ -25,9 +25,9 @@ img {
 
 /* Navigation Bar Styles */
 .navbar {
-  background-color: #fff;
+  background-color: #9c9595;
   padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(212, 127, 127, 0.1);
 }
 
 .navbar-brand {
@@ -36,7 +36,7 @@ img {
 }
 
 .navbar-nav {
-  ms-auto; /* Margin for auto-alignment (Bootstrap) */
+  ms-auto:  /* Margin for auto-alignment (Bootstrap) */
 }
 
 .nav-link {
@@ -59,14 +59,14 @@ img {
 
 /* Header Styles */
 header {
-  background-color: #fff;
+  background-color: #f1e7e7;
   padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(15, 13, 13, 0.1);
 }
 
 h1 {
   font-size: 2.5em; /* Larger headline */
-  margin: 0;
+  margin: 7px;
   color: #333; /* Dark gray for headline */
 }
 
@@ -90,9 +90,10 @@ h1 {
   margin: 50px 0; /* Adjust margin for spacing */
   padding: 30px;
   border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  background-color: #fff; /* White background for content sections */
+  box-shadow: 0 2px 5px rgba(114, 71, 71, 0.1); /* Subtle shadow */
+  background-color: #e7dde7ee; /* White background for content sections */
 }
+
 
 h2 {
   font-size: 1.8em; /* Larger section titles */
@@ -105,14 +106,14 @@ h2 {
 .call-to-action {
   text-align: center;
   padding: 20px;
-  background-color: #eee; /* Light gray background */
+  background-color: #da8b8b; /* Light  background */
 }
 
 .call-to-action a {
   background-color: #9933cc; /* Rich purple button */
   color: #fff; /* White text for better contrast */
   padding: 10px 20px;
-  border: none;
+  border:#9933cc;
   border-radius: 3px; /* Rounded corners for button */
   font-weight: bold;
   transition: background-color 0.3s ease-in-out;
@@ -122,11 +123,12 @@ h2 {
 .about-us,
 .contact,
 .products {
-  padding-top: 1.5rem; /* Add some top padding for content */
-  padding-bottom: 1.5rem; /* Add some bottom padding for content */
+  padding-top: 2.5rem; /* Add some top padding for content */
+  padding-bottom: 2.5rem; /* Add some bottom padding for content */
 }
 
 .about-us p,
 .contact p,
 .products p {
-  line-height: 1.5; /* Improve readability with line
+  line-height: 1.9; /* Improve readability with line
+}

@@ -10,13 +10,23 @@
 </head>
 
 <body>
+
   <header class="container-fluid bg-light">
     <div class="container py-3">
       <h1>Octofarm</h1>
-      <nav class="nav justify-content-start">
+      <nav class="nav justify-content-end">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link" href="products.html">Baked Products</a>
         <a class="nav-link" href="about.html">About Us</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Account
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="signin.html">Sign In</a></li>
+            <li><a class="dropdown-item" href="signup.html">Sign Up</a></li>
+          </ul>
+        </li>
       </nav>
     </div>
   </header>
