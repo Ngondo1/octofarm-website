@@ -1,22 +1,21 @@
 /* General Styles */
-/* General Styles */
 body {
-  font-family: 'Open Sans', sans-serif; /* Clean and modern font */
-  margin: 0;
-  padding: 0;
-  background-color: #f5f5f5; /* Light gray background */
+  font-family: 'Open Sans', sans-serif;
+  margin: 6px;
+  padding: 6px;
+  background-color: #f5f5f5;
 }
 
 a {
-  color: #333; /* Dark gray for links */
+  color: #333;
   text-decoration: none;
   padding: 10px 15px;
   font-weight: bold;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.8s ease-in-out;
 }
 
 a:hover {
-  color: #9933cc; /* Rich purple for links on hover */
+  color: #9933cc;
 }
 
 img {
@@ -24,55 +23,50 @@ img {
   display: block;
 }
 
-/* Navigation Bar (Sidebar) Styles (Consider for future implementation) */
-/* You can uncomment and customize this section if you want a sidebar */
-
-/* .sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 200px;
-  background-color: #333;
-  color: #fff;
+/* Navigation Bar Styles */
+.navbar {
+  background-color: #9c9595;
   padding: 20px;
-  box-sizing: border-box;
+  box-shadow: 0 2px 5px rgba(212, 127, 127, 0.1);
 }
 
-nav {
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.navbar-brand {
+  font-size: 1.8rem; /* Adjust brand name size */
+  font-weight: bold;
 }
 
-nav a {
-  padding: 15px 20px;
-  transition: color 0.3s ease-in-out;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+.navbar-nav {
+  ms-auto:  /* Margin for auto-alignment (Bootstrap) */
 }
 
-nav a:last-child {
-  border-bottom: none;
-} */
+.nav-link {
+  color: #333; /* Consistent text color */
+  padding: 0.5rem 1rem; /* Adjust padding for Bootstrap nav */
+}
+
+.nav-link:hover {
+  color: #9933cc;
+}
+
+.active { /* Style active navbar link (Bootstrap) */
+  color: #9933cc;
+}
 
 /* Main Content Styles */
 .main-content {
   padding: 20px;
-  width: 100%; /* Adjust for sidebar if implemented */
 }
 
 /* Header Styles */
 header {
-  background-color: #fff; /* White header background */
+  background-color: #f1e7e7;
   padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 2px 5px rgba(15, 13, 13, 0.1);
 }
 
 h1 {
   font-size: 2.5em; /* Larger headline */
-  margin: 0;
+  margin: 7px;
   color: #333; /* Dark gray for headline */
 }
 
@@ -80,8 +74,8 @@ h1 {
 .hero {
   text-align: center;
   padding: 50px;
-  background-color: #9933cc; /* Rich purple hero background */
-  color: #fff; /* White text for better readability */
+  background-color: #9933cc;
+  color: #fff;
 }
 
 .hero img {
@@ -96,9 +90,10 @@ h1 {
   margin: 50px 0; /* Adjust margin for spacing */
   padding: 30px;
   border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  background-color: #fff; /* White background for content sections */
+  box-shadow: 0 2px 5px rgba(114, 71, 71, 0.1); /* Subtle shadow */
+  background-color: #e7dde7ee; /* White background for content sections */
 }
+
 
 h2 {
   font-size: 1.8em; /* Larger section titles */
@@ -111,119 +106,29 @@ h2 {
 .call-to-action {
   text-align: center;
   padding: 20px;
-  background-color: #eee; /* Light gray background */
+  background-color: #da8b8b; /* Light  background */
 }
 
 .call-to-action a {
   background-color: #9933cc; /* Rich purple button */
-  color: #fff; /* White text for button */
+  color: #fff; /* White text for better contrast */
   padding: 10px 20px;
-  border: none;
+  border:#9933cc;
   border-radius: 3px; /* Rounded corners for button */
   font-weight: bold;
   transition: background-color 0.3s ease-in-out;
 }
 
-
-/* Content Sections */
+/* Content Sections (Improved Readability) */
 .about-us,
 .contact,
 .products {
-  color: #333; /* Darker text for better contrast */
-  margin: 50px 0; /* Adjust margin for spacing */
-  padding: 30px;
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  background-color: #f5f5f5; /* Light background for content sections */
+  padding-top: 2.5rem; /* Add some top padding for content */
+  padding-bottom: 2.5rem; /* Add some bottom padding for content */
 }
 
-h2 {
-  font-size: 1.8em; /* Larger section titles */
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  color: #9933cc; /* Same rich purple for section titles */
-}
-
-.contact form {
-  display: flex; /* Arrange form elements horizontally */
-  flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
-  width: 100%; /* Form spans full width */
-}
-
-.contact label {
-  display: block; /* Display labels on separate lines */
-  margin-bottom: 5px; /* Add space between label and input */
-  width: 100%; /* Labels span full width */
-}
-
-.contact input[type="text"],
-.contact input[type="email"] {
-  width: 100%; /* Inputs span full width */
-  padding: 10px;
-  border: 1px solid #ccc; /* Light gray border */
-  border-radius: 3px; /* Rounded corners for inputs */
-  font-size: 16px; /* Consistent font size */
-}
-
-.contact textarea {
-  width: 100%; /* Textarea spans full width */
-  height: 150px; /* Adjust height as needed */
-  padding: 10px;
-  border: 1px solid #ccc; /* Light gray border */
-  border-radius: 3px; /* Rounded corners for textarea */
-  font-size: 16px; /* Consistent font size */
-}
-
-.contact input[type="submit"] {
-  background-color: #9933cc; /* Rich purple for submit button */
-  color: #fff; /* White text for better contrast */
-  padding: 10px 20px;
-  border: none; /* Remove default button border */
-  border-radius: 3px; /* Rounded corners for button */
-  cursor: pointer; /* Indicate clickable element */
-  transition: background-color 0.3s ease-in-out; /* Smooth hover effect */
-}
-
-.contact input[type="submit"]:hover {
-  background-color: #660099; /* Darker purple on hover */
-}
-/* Remove inline styles from `contact` and `h2` elements */
-
-/* Product Cards */
-.product-card {
-  float: left; /* Removed for responsive design */
-  margin: 10px;
-  width: 30%; /* Adjust width as needed for responsiveness */
-  text-align: center;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: transform 0.3s ease-in-out;
-}
-
-.product-card:hover {
-  transform: scale(1.02); /* Subtle hover effect */
-}
-
-.product-card img {
-  width: 100%; /* Ensure images fill the card width */
-}
-
-/* Footer Styles */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #333;
-  color: #fff;
-}
-
-/* Responsive Design (consider using a media query for smaller screens) */
-@media only screen and (max-width: 768px) {
-  /* Adjust styles for smaller screens, like making product cards stack instead of float */
-  .product-card {
-    float: none; /* Stack product cards on smaller screens */
-    width: 100%; /* Make cards take full width */
-    margin: 20px auto; /* Center cards horizontally */
-  }
+.about-us p,
+.contact p,
+.products p {
+  line-height: 1.9; /* Improve readability with line
 }
