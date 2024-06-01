@@ -10,7 +10,7 @@
   <header class="header">
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Octofarm</a>
+        <a class="navbar-brand" href="index.html">Pick up where you left</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,23 +27,39 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-               
+                </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 </head>
 
 <body>
 
   <div class="container py-5">
-    <h1 class="text-center mb-4">Welcome, sign In to Octofarm</h1>
+    <h1 class="text-center mb-4">Pick up where you left</h1>
+    <p>Thank you for choosing Octofarm! Please enter your email and password to sign in.</p>
 
     <form action="process_signin.php" method="post" class="row">
+
       <div class="col-md-6 mb-3">
         <label for="email" class="form-label">Email Address:</label>
-        <input type="email" class="form-control" id="email" name="email" required>
+        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter your email" required>
+        <div id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</div>
       </div>
 
       <div class="col-md-6 mb-3">
         <label for="password" class="form-label">Password:</label>
-        <input type="password" class="form-control" id="password" name="password" required>
+        <div class="input-group">
+          <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+          <button class="btn btn-outline-secondary" type="button" id="password-toggle">
+            <span class="fas fa-eye-slash" aria-hidden="true"></span>
+          </button>
+        </div>
         <small id="passwordHelp" class="form-text text-muted">
           <ul>
             <li>Password must be at least 8 characters long.</li>
@@ -52,20 +68,27 @@
         </small>
       </div>
 
-      <div class="col-12 d-flex justify-content-between align-items-center mb-3">
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="remember_me" name="remember_me">
-          <label class="form-check-label" for="remember_me">Remember Me</label>
-        </div>
-        <a href="#" class="text-muted">Forgot Password?</a>
-      </div>
-
       <div class="col-12 d-flex justify-content-between">
         <button type="submit" class="btn btn-primary">Sign In</button>
         <a href="signup.html" class="text-muted">Don't have an account? Sign Up</a>
       </div>
     </form>
   </div>
+
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit-code.js" crossorigin="anonymous"></script>
+  <script>
+    const passwordToggle = document.getElementById('password-toggle');
+    const passwordInput = document.getElementById('password');
+
+    passwordToggle.addEventListener('click', function() {
+      // Toggle the type attribute between password and text
+      const type = passwordInput.type === "password" ? "text" : "password";
+      passwordInput.setAttribute('type', type);
+
+      // Toggle the icon
+      this.classList.toggle('fa-eye-slash', 'fa-eye');
+    });
+  </script>
 
 </body>
 
