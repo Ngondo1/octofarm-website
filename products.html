@@ -2,112 +2,118 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Freshly baked products - Octofarm: East Africa's bakers heart</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ZenhVNpHmPQ0oW9RJr67hE3zYLvFSkl7+uW**,YfT7H9PKlfz4+mW8C2zWJlW" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freshly Baked Products - Octofarm: East Africa's bakers heart</title>
+    <meta name="description" content="Discover Octofarm's delicious range of freshly baked goods, including cake slices, sweet mandazi, and more, all crafted with the finest ingredients.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <header class="header">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Octofarm: East Africa's bakers heart</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="products.html">Baked Goods</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact Us</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Account
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="signin.html">Sign In</a></li>
-                <li><a class="dropdown-item" href="signup.html">Sign Up</a></li>
-              </ul>
-            </li>
-            
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <section class="products container py-5">
-      <h2>Welcome to Cream and Crumble!</h2>
-
-      <p class="lead text-muted">Indulge in our delectable treats, crafted with the finest ingredients and a dash of love.</p>
-
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col">
-          <div class="card shadow border-primary">
-            <img src="https://imgur.com/gallery/marble-slice-yzQrMlA" class="card-img-top img-fluid" alt="Product 1 image">
-            <div class="card-body">
-              <h3 class="card-title">Cake Slices</h3>
-              <p class="card-text">Enjoy our delightful cake slices, perfect for a sweet snack! Vacuum-sealed to maintain freshness for up to 20 days.
-                <br>
-                wholesale: KSH 60 | Retail: KSH 70
-              </p>
-              <button id="demo">Order now!</button>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Octofarm</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+<ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="products.html">Baked Goods</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link cart-icon" href="#">
+                                <i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
             </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow border-primary">
-            <img src="https://imgur.com/gallery/sweet-mandazi-YcsB4Qh" class="card-img-top img-fluid" alt="Product 2 image">
-            <div class="card-body">
-              <h3 class="card-title">Sweet Mandazi</h3>
-              <p class="text-muted">Enjoy our delightful 180g mandazi, perfect for a sweet snack! Vacuum-sealed to maintain freshness for up to 20 days.
-                
-                wholesale: KSH 50 | Retail: KSH 60
-              </p>
-              <button id="demo">Order now!</button>
+        </nav>
+    </header>
 
-              <script>
-               function handleButtonClick() {
-  alert("Thanks for Ordering! You're one step closer.");
-  // You could optionally add code here to change the paragraph content
-   document.getElementById("demo").innerHTML = "Order under process.";
-}
+    <main>
+        <section class="products container py-5">
+            <h2>Welcome to Cream and Crumble!</h2>
+            <p class="lead text-muted">Indulge in our delectable treats, crafted with the finest ingredients and a dash of love.</p>
 
-const orderButton = document.getElementById("demo");
-orderButton.addEventListener("click", handleButtonClick);
-              </script>
+              <div class="row row-cols-1 row-cols-md-2 g-4">
+                      <div class="col">
+                        <div class="card shadow border-primary">
+                          <img src="https://imgur.com/gallery/marble-slice-yzQrMlA" class="card-img-top img-fluid" alt="Product 1 image">
+                          <div class="card-body">
+                            <h3 class="card-title">Cake Slices</h3>
+                            <p class="card-text">Enjoy our delightful cake slices, perfect for a sweet snack! Vacuum-sealed to maintain freshness for up to 20 days.
+                              <br>
+                              wholesale: KSH 60 | Retail: KSH 70
+                            </p>
+                            <button id="demo">Order now!</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="card shadow border-primary">
+                          <img src="https://imgur.com/gallery/sweet-mandazi-YcsB4Qh" class="card-img-top img-fluid" alt="Product 2 image">
+                          <div class="card-body">
+                            <h3 class="card-title">Sweet Mandazi</h3>
+                            <p class="text-muted">Enjoy our delightful 180g mandazi, perfect for a sweet snack! Vacuum-sealed to maintain freshness for up to 20 days.
+                              
+                              wholesale: KSH 50 | Retail: KSH 60
+                            </p>
+                            <button id="demo">Order now!</button>
+              
+                            <script>
+                             function handleButtonClick() {
+                alert("Thanks for Ordering! You're one step closer.");
+                // You could optionally add code here to change the paragraph content
+                 document.getElementById("demo").innerHTML = "Order under process.";
+              }
+              
+              const orderButton = document.getElementById("demo");
+              orderButton.addEventListener("click", handleButtonClick);
+                            </script>
+              
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              
+                    
+              
+              
+        </section>
+    </main>
 
-            </div>
-          </div>
-        </div>
-      </div>
+    <footer class="container-fluid bg-light py-3 text-center">
+        <p>&copy; Octofarm Limited 2024</p>
+        <p>Contact us: <a href="mailto:Octofarmenterprises@gmail.com">info@Octofarmenterprises@gmail.com</a></p>
+        <p>&copy; Cream and Crumble 2024</p>
+    </footer>
+    <button onclick="window.print()">Print this page</button>
 
-      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Sample cart functionality - replace with your actual implementation
+        const cartIcon = document.querySelector('.cart-icon');
+        const cartCount = document.getElementById('cart-count');
+        let cartItems = 0; // Start with 0 items in the cart
 
-
-
-      </section>
-  </main>
-
-  <footer class="container-fluid bg-light py-3 text-center">
-    <p>&copy; Octofarm Limited 2024</p>
-    <p>contact us <a href="Octofarmenterprises@gmail.com">info@Octofarmenterprises@gmail.com</a></p>
-    <p>&copy; Cream and Crumble 2024</p>
-  </footer>
-  <button onclick="window.print()">Print this page</button>
+        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                cartItems++;
+                cartCount.textContent = cartItems;
+                // You would typically update your backend here as well
+            });
+        });
+    </script>
 </body>
-
 </html>
