@@ -59,8 +59,12 @@
           <div class="card shadow border-primary">
             <img src="https://imgur.com/gallery/marble-slice-yzQrMlA" class="card-img-top img-fluid" alt="Product 1 image">
             <div class="card-body">
-              <h3 class="card-title">Cake Slices (Wholesale/Retail)</h3>
-              <p class="card-text">Cream and Crumble marble cake slice and lemon cake slice - KSH 55/ KSH 60</p>
+              <h3 class="card-title">Cake Slices</h3>
+              <p class="card-text">Enjoy our delightful cake slices, perfect for a sweet snack! Vacuum-sealed to maintain freshness for up to 20 days.
+                <br>
+                wholesale: KSH 60 | Retail: KSH 70
+              </p>
+              <button id="demo">Order now!</button>
             </div>
           </div>
         </div>
@@ -69,28 +73,41 @@
             <img src="https://imgur.com/gallery/sweet-mandazi-YcsB4Qh" class="card-img-top img-fluid" alt="Product 2 image">
             <div class="card-body">
               <h3 class="card-title">Sweet Mandazi</h3>
-              <p class="text-muted">Cream and Crumble 180g mandazi - KSH 50/ KSH 60 (Wholesale/Retail)</p>
+              <p class="text-muted">Enjoy our delightful 180g mandazi, perfect for a sweet snack! Vacuum-sealed to maintain freshness for up to 20 days.
+                
+                wholesale: KSH 50 | Retail: KSH 60
+              </p>
+              <button id="demo">Order now!</button>
+
+              <script>
+               function handleButtonClick() {
+  alert("Thanks for Ordering! You're one step closer.");
+  // You could optionally add code here to change the paragraph content
+   document.getElementById("demo").innerHTML = "Order under process.";
+}
+
+const orderButton = document.getElementById("demo");
+orderButton.addEventListener("click", handleButtonClick);
+              </script>
+
             </div>
           </div>
         </div>
       </div>
 
-      <hr>
+      
 
-      <h2>Always Innovating: New and Exciting Treats</h2>
 
-      <p>At Cream and Crumble, we're constantly striving to surprise and delight our customers with new and exciting treats. We take inspiration from seasonal ingredients, customer feedback, and the latest trends in baking to develop innovative flavors and textures. 
-      This ensures that you can always experience something new and delicious on your next visit.</p>
-
-      <p>We're passionate about pushing the boundaries of baking, experimenting with unique flavor combinations and incorporating healthier alternatives. Whether you're a traditionalist who craves classic favorites or an adventurous foodie seeking the latest creations
 
       </section>
   </main>
 
   <footer class="container-fluid bg-light py-3 text-center">
     <p>&copy; Octofarm Limited 2024</p>
+    <p>contact us <a href="Octofarmenterprises@gmail.com">info@Octofarmenterprises@gmail.com</a></p>
     <p>&copy; Cream and Crumble 2024</p>
   </footer>
+  <button onclick="window.print()">Print this page</button>
 </body>
 
 </html>
