@@ -83,6 +83,7 @@ h1 {
 }
 
 /* Content Sections */
+.index,
 .about-us,
 .contact,
 .products {
@@ -120,6 +121,7 @@ h2 {
 }
 
 /* Content Sections (Improved Readability) */
+.index,
 .about-us,
 .contact,
 .products {
@@ -130,5 +132,5 @@ h2 {
 .about-us p,
 .contact p,
 .products p {
-  line-height: 1.9; /* Improve readability with line
+  line-height: 1.9; 
 }

@@ -10,7 +10,7 @@
   <header class="header">
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Octofarm</a>
+        <a class="navbar-brand" href="index.html">Go live!</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,15 +27,23 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-               
+                </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 </head>
 
 <body>
-    
 
   <div class="container py-5">
-    <h1 class="text-center mb-4">Sign Up for Octofarm</h1>
-    <p> Welcome to Octofarm, we are happy to help you create a new account. </p>
+    <h1 class="text-center mb-4">Go live!</h1>
+    <p>Welcome to Octofarm! To unlock exclusive benefits and a more personalized experience, create a new account today.</p>
+
     <form action="process_signup.php" method="post" class="row">
       <div class="col-md-6 mb-3">
         <label for="name" class="form-label">Full Name:</label>
@@ -61,7 +69,6 @@
       <div class="col-md-6 mb-3">
         <label for="confirm_password" class="form-label">Confirm Password:</label>
         <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
-      </div>
 
       <div class="col-12 d-flex justify-content-between">
         <button type="submit" class="btn btn-primary">Sign Up</button>
