@@ -9,11 +9,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    
 </head>
 
 <body>
-
+    <script src="script.js"></script>
     <header class="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container">
@@ -47,37 +47,45 @@
             <h2>Welcome to Cream and Crumble!</h2>
             <p class="lead text-muted">Indulge in our delectable treats, crafted with the finest ingredients and a dash of love.</p>
 
-         <div class="row row-cols-1 row-cols-md-2 g-4">
-              <div class="col">
-              <div class="card shadow border-primary">
-              <img src="https://imgur.com/gallery/marble-slice-yzQrMlA" class="card-img-top img-fluid" alt="Product 1 image">
-              <div class="card-body">
-               <h3 class="card-title">Cake Slices</h3>
-               <p class="card-text">Enjoy our delightful cake slices, perfect for a sweet snack! Vacuum-sealed to maintain freshness for up to 20 days.
-               <br>
-               wholesale: KSH 60 | Retail: KSH 70
-               </p>
-               <button id="demo">Order now!</button>
-              </div>
-               </div>
-               </div>
-               <div class="col">
-               <div class="card shadow border-primary">
-              <img src="https://imgur.com/gallery/sweet-mandazi-YcsB4Qh" class="card-img-top img-fluid" alt="Product 2 image">
-               <div class="card-body">
-               <h3 class="card-title">Sweet Mandazi</h3>
-               <p class="text-muted">Enjoy our delightful 180g mandazi, perfect for a sweet snack! Vacuum-sealed to maintain freshness for up to 20 days.
-               
-              wholesale: KSH 50 | Retail: KSH 60
-            </p>
-              <button id="demo" class="btn btn-primary mt-3">Order now!</button>
-              
-           
-              
-             </div>
-               </div>
-              </div>
-               </div>
+            <div class="col">
+                <div class="card shadow border-primary">
+                    <img src="https://imgur.com/gallery/marble-slice-yzQrMlA" class="card-img-top img-fluid" alt="Cake Slices">
+                    <div class="card-body">
+                        <h3 class="card-title">Cake Slices</h3>
+                        <p class="card-text">Enjoy our delightful cake slices, perfect for a sweet snack! Vacuum-sealed to maintain freshness for up to 20 days.</p>
+            
+                        <div class="input-group mb-3">
+                            <button class="btn btn-outline-secondary" type="button" id="minus-cake">-</button>
+                            <input type="number" class="form-control text-center" value="1" min="1" id="quantity-cake">
+                            <button class="btn btn-outline-secondary" type="button" id="plus-cake">+</button>
+                        </div>
+            
+                        <p>Price: Ksh <span id="price-cake">70</span></p> 
+                        <button id="demo1" class="btn btn-primary mt-3" onclick="window.location.href='checkout.html'">Order now!</button> 
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="col">
+                <div class="card shadow border-primary">
+                    <img src="https://imgur.com/gallery/sweet-mandazi-YcsB4Qh" class="card-img-top img-fluid" alt="Sweet Mandazi image">
+                    <div class="card-body">
+                        <h3 class="card-title">Sweet Mandazi</h3>
+                        <p class="text-muted">Enjoy our delightful 180g mandazi, perfect for a sweet snack! Vacuum-sealed to maintain freshness for up to 20 days.</p>
+            
+                        <div class="input-group mb-3">
+                            <button class="btn btn-outline-secondary" type="button" id="minus-mandazi">-</button>
+                            <input type="number" class="form-control text-center" value="1" min="1" id="quantity-mandazi">
+                            <button class="btn btn-outline-secondary" type="button" id="plus-mandazi">+</button>
+                        </div>
+            
+                        <p>Price: Ksh <span id="price-mandazi">60</span></p> 
+                        <button id="demo2" class="btn btn-primary mt-3" onclick="window.location.href='checkout.html'">Order now!</button>
+                    </div>
+                </div>
+            </div>
+            
               
              
               
@@ -85,6 +93,80 @@
         </section>
     </main>
 
+
+    
+    <script>
+        document.getElementById("demo1").addEventListener("click", function() {
+    updateOrder("Cake Slices", 70); // Pass product name and price
+});
+document.getElementById("demo2").addEventListener("click", function() {
+    updateOrder("Sweet Mandazi", 60);
+});
+
+document.getElementById("plus-cake").addEventListener("click", function() {
+    updateQuantityAndPrice("quantity-cake", "price-cake", 70, true);
+});
+
+document.getElementById("minus-cake").addEventListener("click", function() {
+    updateQuantityAndPrice("quantity-cake", "price-cake", 70, false);
+});
+
+document.getElementById("plus-mandazi").addEventListener("click", function() {
+    updateQuantityAndPrice("quantity-mandazi", "price-mandazi", 60, true); 
+});
+
+document.getElementById("minus-mandazi").addEventListener("click", function() {
+    updateQuantityAndPrice("quantity-mandazi", "price-mandazi", 60, false);
+});
+
+
+function updateQuantityAndPrice(quantityId, priceId, basePrice, increment) {
+    const quantityInput = document.getElementById(quantityId);
+    const priceSpan = document.getElementById(priceId);
+
+ 
+
+    let quantity = parseInt(quantityInput.value);
+    if (increment && quantity < 10) { // Assuming maximum quantity of 10
+        quantity++;
+    } else if (!increment && quantity > 1) {
+        quantity--;
+    }
+       quantityInput.value = quantity;
+    priceSpan.textContent = (quantity * basePrice).toFixed(2);
+}
+
+function updateOrder(productName, basePrice) {
+    const quantity = parseInt(document.getElementById(`quantity-${productName.toLowerCase().replace(" ", "-")}`).value); 
+    let orderData = JSON.parse(localStorage.getItem("orderData")) || [];
+
+    const product = {
+        name: productName,
+        quantity: quantity,  // Get quantity from input
+        price: basePrice * quantity // Calculate total price
+    };
+}
+
+  
+
+
+
+
+function updateOrder(productName, productPrice) {
+    let orderData = JSON.parse(localStorage.getItem("orderData")) || [];
+    const product = {
+        name: productName,
+        quantity: 1, 
+        price: productPrice 
+    };
+    orderData.push(product);
+    localStorage.setItem("orderData", JSON.stringify(orderData));
+    // Optional: Redirect or provide feedback
+    window.location.href = "checkout.html";
+}   </script>
+
+
+   
     <footer class="container-fluid bg-light py-3 text-center">
         <p>&copy; Octofarm Limited 2024</p>
         <p>Contact us: <a href="mailto:Octofarmenterprises@gmail.com">info@Octofarmenterprises@gmail.com</a></p>
@@ -93,6 +175,9 @@
     <button onclick="window.print()">Print this page</button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
     <script>
         // Sample cart functionality - replace with your actual implementation
         const cartIcon = document.querySelector('.cart-icon');
@@ -106,6 +191,45 @@
                 // You would typically update your backend here as well
             });
         });
+ 
     </script>
+
+
+    <script>
+document.getElementById("demo1").addEventListener("click", function() {
+    updateOrder("Cake Slices", 70); 
+});
+
+document.getElementById("demo2").addEventListener("click", function() {
+    updateOrder("Sweet Mandazi", 60);
+});
+
+function updateOrder(productName, productPrice) {
+    let orderData = JSON.parse(localStorage.getItem("orderData")) || [];
+
+    // Check if the product already exists in the order
+    const existingProductIndex = orderData.findIndex(item => item.name === productName);
+
+    if (existingProductIndex !== -1) {
+        // Product exists, increment quantity
+        orderData[existingProductIndex].quantity++;
+        orderData[existingProductIndex].price = productPrice * orderData[existingProductIndex].quantity
+    } else {
+        // Product doesn't exist, add it with quantity 1
+        const product = {
+            name: productName,
+            quantity: 1,
+            price: productPrice
+        };
+        orderData.push(product);
+    }
+
+    // Store updated order data
+    localStorage.setItem("orderData", JSON.stringify(orderData));
+
+    // Optional: Redirect or provide feedback
+    // window.location.href = "checkout.html";
+}
+</script>
 </body>
 </html>
