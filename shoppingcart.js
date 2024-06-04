@@ -65,7 +65,7 @@ class ShoppingCart {
 
   proceedToCheckout() {
       if (this.total > 0) {
-          alert("Thank you for your order! Total: Ksh " + this.total.toFixed(2));
+          alert("Paybill:522533  AccNo:7738381  Total: Ksh " + this.total.toFixed(2) );
           // ... (Your actual checkout logic here) ...
       } else {
           alert("Your cart is empty. Please add items before proceeding to checkout.");

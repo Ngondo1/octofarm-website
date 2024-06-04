@@ -104,3 +104,11 @@ h2 {
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
+#localTime {
+  font-style: italic;  /* Make the text italic */
+  margin-top: 10px;     /* Add some top margin for spacing */
+}
+
+footer {
+  position: relative;    /* Make the footer a positioning context */
+}
