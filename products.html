@@ -9,11 +9,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="shoppingcart.js" defer></script>
     
 </head>
 
 <body>
-    <script src="script.js"></script>
+   
     <header class="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container">
@@ -51,8 +52,8 @@
                 <div class="card shadow border-primary">
                     <img src="https://imgur.com/gallery/marble-slice-yzQrMlA" class="card-img-top img-fluid" alt="Cake Slices">
                     <div class="card-body">
-                        <h3 class="card-title">Cake Slices</h3>
-                        <p class="card-text">Enjoy our delightful cake slices, perfect for a sweet snack! Vacuum-sealed to maintain freshness for up to 20 days.</p>
+                        <h2 class="card-title">Cake Slices</h2>
+                        <p class="card-text">Enjoy our delightful cake slices, perfect for a sweet snack!<br><br> Vacuum-sealed to maintain freshness for up to 20 days.</p>
             
                         <div class="input-group mb-3">
                             <button class="btn btn-outline-secondary" type="button" id="minus-cake">-</button>
@@ -64,15 +65,15 @@
                         <button id="demo1" class="btn btn-primary mt-3" onclick="window.location.href='checkout.html'">Order now!</button> 
                     </div>
                 </div>
-            </div>
+            </div><br><br><br><br>
 
             
             <div class="col">
                 <div class="card shadow border-primary">
                     <img src="https://imgur.com/gallery/sweet-mandazi-YcsB4Qh" class="card-img-top img-fluid" alt="Sweet Mandazi image">
                     <div class="card-body">
-                        <h3 class="card-title">Sweet Mandazi</h3>
-                        <p class="text-muted">Enjoy our delightful 180g mandazi, perfect for a sweet snack! Vacuum-sealed to maintain freshness for up to 20 days.</p>
+                        <h2 class="card-title">Sweet Mandazi</h2>
+                        <p class="text-muted">Enjoy our delightful 180g mandazi, perfect for a sweet snack!<br><br> Vacuum-sealed to maintain freshness for up to 20 days.</p>
             
                         <div class="input-group mb-3">
                             <button class="btn btn-outline-secondary" type="button" id="minus-mandazi">-</button>
@@ -84,10 +85,67 @@
                         <button id="demo2" class="btn btn-primary mt-3" onclick="window.location.href='checkout.html'">Order now!</button>
                     </div>
                 </div>
-            </div>
+            </div><br><br><br><br>
             
+
+            <div class="col">
+                <div class="card shadow border-primary">
+                    <img src="https://imgur.com/gallery/plain/chocolate Muffins-YcsB4Qh" class="card-img-top img-fluid" alt="plain/chocolate Muffins image">
+                    <div class="card-body">
+                        <h2 class="card-title">Muffins</h2>
+                        <p class="text-muted">Enjoy our delightful Muffins, perfect for a sweet snack!<br><br> A nutritious snack for tea break.</p><br>
+                        <h3>Choose between chocolate and vanilla flavoring.</h3>
+
+                        <div class="input-group mb-3">
+                            <button class="btn btn-outline-secondary" type="button" id="minus-muffins">-</button>
+                            <input type="number" class="form-control text-center" value="1" min="1" id="quantity-muffins">
+                            <button class="btn btn-outline-secondary" type="button" id="plus-muffins">+</button>
+                        </div>
+            
+                        <p>Price: Ksh <span id="price-muffins">50</span></p> 
+                        <button id="demo3" class="btn btn-primary mt-3" onclick="window.location.href='checkout.html'">Order now!</button>
+                    </div>
+                </div>
+            </div><br><br><br><br>
               
-             
+            <div class="col">
+                <div class="card shadow border-primary">
+                    <img src="https://imgur.com/gallery/queencakes-YcsB4Qh" class="card-img-top img-fluid" alt="queencakes image">
+                    <div class="card-body">
+                        <h2 class="card-title">Queencakes</h2>
+                        <p class="text-muted">Enjoy our delightful Queencakes, perfect for a sweet snack!<br><br> A nutritious snack for tea break.<br><br> For customer convinience, they are available in a packets of six!</p>
+            
+                        <div class="input-group mb-3">
+                            <button class="btn btn-outline-secondary" type="button" id="minus-queencakes">-</button>
+                            <input type="number" class="form-control text-center" value="1" min="1" id="quantity-queencakes">
+                            <button class="btn btn-outline-secondary" type="button" id="plus-queencakes">+</button>
+                        </div>
+            
+                        <p>Price: Ksh <span id="price-queencakes">100</span></p> 
+                        <button id="demo4" class="btn btn-primary mt-3" onclick="window.location.href='checkout.html'">Order now!</button>
+                    </div>
+                </div>
+            </div><br><br><br><br>
+
+            <div class="col">
+                <div class="card shadow border-primary">
+                    <img src="https://imgur.com/gallery/cookies-YcsB4Qh" class="card-img-top img-fluid" alt="cookies image">
+                    <div class="card-body">
+                        <h2 class="card-title">Cookies</h2>
+                        <p class="text-muted">Enjoy our delightful Cookies, perfect for a sweet snack!<br><br> A nutritious snack for tea break.<br><br> For customer convinience, they are available in a packets of 10!</p>
+                        <br><h3>Choose between vanilla and coconut flavoring.</h3>
+            
+                        <div class="input-group mb-3">
+                            <button class="btn btn-outline-secondary" type="button" id="minus-cookies">-</button>
+                            <input type="number" class="form-control text-center" value="1" min="1" id="quantity-cookies">
+                            <button class="btn btn-outline-secondary" type="button" id="plus-cookies">+</button>
+                        </div>
+            
+                        <p>Price: Ksh <span id="price-cookies">300</span></p> 
+                        <button id="demo5" class="btn btn-primary mt-3" onclick="window.location.href='checkout.html'">Order now!</button>
+                    </div>
+                </div>
+            </div><br><br><br><br>
               
               
         </section>
@@ -101,6 +159,17 @@
 });
 document.getElementById("demo2").addEventListener("click", function() {
     updateOrder("Sweet Mandazi", 60);
+});
+document.getElementById("demo3").addEventListener("click", function() {
+    updateOrder("Muffins", 50);
+});
+
+document.getElementById("demo4").addEventListener("click", function() {
+    updateOrder("queencakes", 100);
+});
+
+document.getElementById("demo5").addEventListener("click", function() {
+    updateOrder("cookies", 300);
 });
 
 document.getElementById("plus-cake").addEventListener("click", function() {
@@ -117,6 +186,30 @@ document.getElementById("plus-mandazi").addEventListener("click", function() {
 
 document.getElementById("minus-mandazi").addEventListener("click", function() {
     updateQuantityAndPrice("quantity-mandazi", "price-mandazi", 60, false);
+});
+
+document.getElementById("plus-muffins").addEventListener("click", function() {
+    updateQuantityAndPrice("quantity-muffins", "price-muffins", 50, true); 
+});
+
+document.getElementById("minus-muffins").addEventListener("click", function() {
+    updateQuantityAndPrice("quantity-muffins", "price-muffins", 50, false);
+});
+
+document.getElementById("plus-queencakes").addEventListener("click", function() {
+    updateQuantityAndPrice("quantity-queencakes", "price-queencakes", 100, true); 
+});
+
+document.getElementById("minus-queencakes").addEventListener("click", function() {
+    updateQuantityAndPrice("quantity-queencakes", "price-queencakes", 100, false);
+});
+
+document.getElementById("plus-cookies").addEventListener("click", function() {
+    updateQuantityAndPrice("quantity-cookies", "price-cookies", 300, true); 
+});
+
+document.getElementById("minus-cookies").addEventListener("click", function() {
+    updateQuantityAndPrice("quantity-cookies", "price-cookies", 300, false);
 });
 
 
@@ -149,9 +242,6 @@ function updateOrder(productName, basePrice) {
 
   
 
-
-
-
 function updateOrder(productName, productPrice) {
     let orderData = JSON.parse(localStorage.getItem("orderData")) || [];
     const product = {
@@ -171,6 +261,8 @@ function updateOrder(productName, productPrice) {
         <p>&copy; Octofarm Limited 2024</p>
         <p>Contact us: <a href="mailto:Octofarmenterprises@gmail.com">info@Octofarmenterprises@gmail.com</a></p>
         <p>&copy; Cream and Crumble 2024</p>
+        <script src="time.js" defer></script>
+    <p id="localTime"></p>
     </footer>
     <button onclick="window.print()">Print this page</button>
 
@@ -202,6 +294,18 @@ document.getElementById("demo1").addEventListener("click", function() {
 
 document.getElementById("demo2").addEventListener("click", function() {
     updateOrder("Sweet Mandazi", 60);
+});
+
+document.getElementById("demo3").addEventListener("click", function() {
+    updateOrder("Muffins", 50);
+});
+
+document.getElementById("demo4").addEventListener("click", function() {
+    updateOrder("queencakes", 100);
+});
+
+document.getElementById("demo5").addEventListener("click", function() {
+    updateOrder("cookies", 300);
 });
 
 function updateOrder(productName, productPrice) {

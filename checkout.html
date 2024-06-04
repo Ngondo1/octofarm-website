@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout - Cream and Crumble</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script src="shoppingcart.js" defer></script>
   <style>
     /* Basic Styling (Customize as needed) */
     .cart-item {
@@ -24,6 +27,7 @@
     }
 </style>
     </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
@@ -51,79 +55,14 @@
     <footer class="footer mt-auto py-3 bg-light">
         <div class="container text-center">
             <span class="text-muted">&copy; 2024 Cream and Crumble</span>
+            <p>Contact us: <a href="mailto:Octofarmenterprises@gmail.com">info@Octofarmenterprises@gmail.com</a></p>
+            <p>&copy; Cream and Crumble 2024</p>
         </div>
+        <script src="time.js" defer></script>
+        <p id="localTime"></p>
     </footer>
 
-    <script>
-
-        // Function to get order data from local storage
-        function getOrderDataFromStorage() {
-            const orderDataString = localStorage.getItem('orderData');
-            if (orderDataString) {
-                return JSON.parse(orderDataString);
-            } else {
-                return null; // No order data found
-            }
-        }
-
-        const orderData = getOrderDataFromStorage();
-        const cartItemsElement = document.getElementById("cart-items");
-        const orderSummaryElement = document.getElementById("orderSummary");
-        const totalPriceElement = document.getElementById("totalPrice");
-
-        function updateCartDisplay() {
-            const orderData = getOrderDataFromStorage();
-            let total = 0;
-            cartItemsElement.innerHTML = ''; // Clear previous items
-            orderSummaryElement.innerHTML = '';
-
-            if (orderData && orderData.length > 0) {
-                orderData.forEach(item => {
-                    // ... (rest of your item display logic)
-                    total += item.price;
-                });
-            } else {
-                cartItemsElement.innerHTML = "<p>Your cart is empty.</p>";
-                orderSummaryElement.innerHTML = "<p>Your cart is empty.</p>";
-            }
-            totalPriceElement.textContent = `Total: Ksh ${total.toFixed(2)}`;
-        }
-
-        refreshButton.addEventListener("click", function() {
-            localStorage.removeItem('orderData');
-            updateCartDisplay();
-        });
-
-        // Initial display on page load
-        updateCartDisplay();
-
-        let total = 0; 
-
-        if (orderData && orderData.length > 0) {
-            orderData.forEach(item => {
-                const itemElement = document.createElement("div");
-                itemElement.classList.add("cart-item");
-                itemElement.innerHTML = `
-                    <img class="item-image" src="https://via.placeholder.com/80" alt="${item.name}">
-                    <div class="item-details">
-                        <h3>${item.name}</h3>
-                        <p>Quantity: ${item.quantity}</p>
-                        <p>Price: Ksh ${item.price.toFixed(2)}</p>
-                    </div>
-                `;
-                cartItemsElement.appendChild(itemElement);
-                orderSummaryElement.appendChild(itemElement.cloneNode(true)); 
-
-                total += item.price; 
-            });
-        } else {
-            cartItemsElement.innerHTML = "<p>Your cart is empty.</p>";
-            orderSummaryElement.innerHTML = "<p>Your cart is empty.</p>";
-        }
-
-        totalPriceElement.textContent = `Total: Ksh ${total.toFixed(2)}`; 
-
-     </script>
+    
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
 </body>
 </html>
