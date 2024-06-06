@@ -10,7 +10,7 @@
   <header class="header">
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Go live!</a>
+        <a class="navbar-brand" href="#"><strong><em>Go live!</em></strong></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -42,7 +42,8 @@
 
   <div class="container py-5">
     <h1 class="text-center mb-4">Go live!</h1>
-    <p>Welcome to Octofarm! To unlock exclusive benefits and a more personalized experience, create a new account today.</p>
+    <br>
+    <h2>Welcome to Octofarm! To unlock exclusive benefits and a more personalized experience, create a new account today.</h2>
 
     <form action="process_signup.php" method="post" class="row">
       <div class="col-md-6 mb-3">
@@ -71,16 +72,21 @@
         <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
 
       <div class="col-12 d-flex justify-content-between">
-        <button type="submit" class="btn btn-primary">Sign Up</button>
+        <button type="submit" class="btn btn-primary" onclick="window.location.href='UsersPage.html'">Sign Up</button>
+        <br><br>
         <a href="signin.html" class="text-muted">Already have an account? Sign In</a>
       </div>
     </form>
   </div>
-       <p>Congratulations on completion of the form. </p>
+       <h2>Welcome aboard!! </h2>
 
        <footer class="container-fluid bg-light py-3 text-center">
         <p>&copy; Octofarm Limited 2024</p>
+        <p>Contact us: <a href="mailto:Octofarmenterprises@gmail.com">info@Octofarmenterprises@gmail.com</a></p>
         <p>&copy; Cream and Crumble 2024</p>
+        
+        <script src="time.js" defer></script>
+    <p id="localTime"></p>
       </footer>
 
 </body>
