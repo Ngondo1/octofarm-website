@@ -75,6 +75,46 @@ class ShoppingCart {
 
 new ShoppingCart();
 
+// ... your existing checkout.html script ...
+
+document.getElementById("checkoutButton").addEventListener("click", async function() {
+    const orderData = getOrderDataFromStorage();
+    if (orderData && orderData.length > 0) {
+        const phoneNumber = prompt("Please enter your M-Pesa phone number (e.g., 2547XXXXXXXX):");
+        if (phoneNumber) {
+            try {
+                const response = await initiateMpesaPayment(phoneNumber, total);
+                // Handle response, e.g., display success or error message
+            } catch (error) {
+                console.error("Error initiating M-Pesa payment:", error);
+                alert("An error occurred while processing your payment. Please try again.");
+            }
+        }
+    } else {
+        alert("Your cart is empty. Please add items before proceeding to checkout.");
+    }
+});
+
+async function initiateMpesaPayment(phoneNumber, amount) {
+    // Send a request to your backend server to initiate STK Push
+    const response = await fetch('your_backend_script.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            phoneNumber: phoneNumber,
+            amount: amount
+        })
+    });
+
+    if (!response.ok) {
+        throw new Error('Network response was not ok.');
+    }
+    return await response.json();
+}
+
+
 
 
 

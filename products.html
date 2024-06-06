@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="shoppingcart.js" defer></script>
     
+    
 </head>
 
 <body>
@@ -18,7 +19,7 @@
     <header class="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="index.html">Octofarm</a>
+                <a class="navbar-brand" href="#"><strong><em>Octofarm - East Africa's Baker's Heart</em></strong></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -30,16 +31,26 @@
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
                         <li class="nav-item">
                             <a class="nav-link cart-icon" href="#">
-                                <i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span>
+                                <button id="cart-button" onclick="window.location.href='checkout.html'">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span id="cart-count">0</span>
+                                  </button>
                             </a>
                         </li>
                     </ul>
-                </div>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
+                    <div class="container">
+                        <form class="d-flex mt-3" role="search">
+                          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                          <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                        <div class="mt-3">
+                          <label for="minPrice">Min Price:</label>
+                          <input type="number" id="minPrice" class="form-control" value="0">
+                          <label for="maxPrice">Max Price:</label>
+                          <input type="number" id="maxPrice" class="form-control" value="1000">
+                        </div>
+                      </div>
+                      
         </nav>
     </header>
 
@@ -48,6 +59,10 @@
             <h2>Welcome to Cream and Crumble!</h2>
             <p class="lead text-muted">Indulge in our delectable treats, crafted with the finest ingredients and a dash of love.</p>
 
+            
+            
+            
+            <div class="product-item">
             <div class="col">
                 <div class="card shadow border-primary">
                     <img src="https://imgur.com/gallery/marble-slice-yzQrMlA" class="card-img-top img-fluid" alt="Cake Slices">
@@ -65,10 +80,14 @@
                         <button id="demo1" class="btn btn-primary mt-3" onclick="window.location.href='checkout.html'">Order now!</button> 
                     </div>
                 </div>
-            </div><br><br><br><br>
+            </div>
+            </div>
+             </div><br><br><br><br>
+            </div>
 
             
-            <div class="col">
+             <div class="product-item">
+             <div class="col">
                 <div class="card shadow border-primary">
                     <img src="https://imgur.com/gallery/sweet-mandazi-YcsB4Qh" class="card-img-top img-fluid" alt="Sweet Mandazi image">
                     <div class="card-body">
@@ -86,8 +105,10 @@
                     </div>
                 </div>
             </div><br><br><br><br>
+        </div>
             
 
+            <div class="product-item">
             <div class="col">
                 <div class="card shadow border-primary">
                     <img src="https://imgur.com/gallery/plain/chocolate Muffins-YcsB4Qh" class="card-img-top img-fluid" alt="plain/chocolate Muffins image">
@@ -107,7 +128,10 @@
                     </div>
                 </div>
             </div><br><br><br><br>
+        </div>
               
+            
+            <div class="product-item">
             <div class="col">
                 <div class="card shadow border-primary">
                     <img src="https://imgur.com/gallery/queencakes-YcsB4Qh" class="card-img-top img-fluid" alt="queencakes image">
@@ -126,7 +150,11 @@
                     </div>
                 </div>
             </div><br><br><br><br>
+        </div>
 
+            
+            
+            <div class="product-item">
             <div class="col">
                 <div class="card shadow border-primary">
                     <img src="https://imgur.com/gallery/cookies-YcsB4Qh" class="card-img-top img-fluid" alt="cookies image">
@@ -134,9 +162,6 @@
                         <h2 class="card-title">Cookies</h2>
                         <p class="text-muted">Enjoy our delightful Cookies, perfect for a sweet snack!<br><br> A nutritious snack for tea break.<br><br> For customer convinience, they are available in a packets of 10!</p>
                         <br><h3>Choose between vanilla and coconut flavoring.</h3>
-            
-
-            
                         <p>Price: Ksh <span id="price-cookies">300</span></p> 
 
                         <div class="input-group mb-3">
@@ -152,16 +177,74 @@
                             </select>
                         
                         </div>
-
-
                         <button id="demo5" class="btn btn-primary mt-3" onclick="window.location.href='checkout.html'">Order now!</button>
                     </div>
                 </div>
             </div><br><br><br><br>
+        </div>
               
               
         </section>
     </main>
+
+    <script>
+     const searchInput = document.querySelector('.form-control');
+const searchButton = document.querySelector('.btn-outline-success');
+const productItems = document.querySelectorAll('.product-item');
+const minPriceInput = document.getElementById('minPrice');
+const maxPriceInput = document.getElementById('maxPrice');
+
+searchInput.addEventListener('keyup', filterProducts);
+searchButton.addEventListener('click', filterProducts);
+minPriceInput.addEventListener('input', filterProducts);
+maxPriceInput.addEventListener('input', filterProducts);
+
+function filterProducts() {
+  const searchTerm = searchInput.value.toLowerCase();
+  const minPrice = parseFloat(minPriceInput.value) || 0;
+  const maxPrice = parseFloat(maxPriceInput.value) || Infinity;
+
+  let matchFound = false; // Track if any items match
+
+  productItems.forEach(item => {
+    const productName = item.querySelector('.card-title').textContent.toLowerCase();
+    const productDescription = item.querySelector('.card-text').textContent.toLowerCase();
+    const productPrice = parseFloat(item.querySelector('p:last-of-type span').textContent); // Get price from the last <p> tag's <span>
+    const isMuffinsCard = productName.includes('muffins');
+    const isCookiesCard = productName.includes('cookies');
+
+    let flavorMatch = false;
+    if (isCookiesCard) {
+      const cookieFlavors = item.querySelector('h3').textContent.toLowerCase();
+      flavorMatch = cookieFlavors.includes('vanilla') || cookieFlavors.includes('coconut');
+    } else if (isMuffinsCard) {
+      flavorMatch = productDescription.includes('chocolate') || productDescription.includes('vanilla');
+    }
+
+    const isMatch = (
+      productName.includes(searchTerm) || 
+      productDescription.includes(searchTerm) || 
+      flavorMatch
+    ) && (
+      productPrice >= minPrice && productPrice <= maxPrice
+    );
+
+    if (isMatch) {
+      matchFound = true; // A match was found, so update the flag
+      item.style.display = 'block'; // Show the item if it matches
+    } else {
+      item.style.display = 'none'; // Hide the item if it doesn't match
+    }
+  });
+
+  // After looping through all items, if no match was found, show all items again
+  if (!matchFound) {
+    productItems.forEach(item => {
+      item.style.display = 'block'; 
+    });
+  }
+}
+    </script>
 
 
     
@@ -361,6 +444,47 @@ function updateOrder(productName, productPrice) {
     // Optional: Redirect or provide feedback
     // window.location.href = "checkout.html";
 }
+</script>
+
+<script>
+    
+  function openCart() {
+  // 1. Get cart count
+  function openCart() {
+  // 1. Get product name and quantity
+  const productName = event.target.closest('.product-item').querySelector('.card-title').textContent;
+  const quantityInput = event.target.closest('.product-item').querySelector('input[type="number"]');
+  const quantity = parseInt(quantityInput.value) || 1; // Default to 1 if input is invalid
+
+  // 2. Get existing cart items from local storage
+  let cartItems = JSON.parse(localStorage.getItem('cartItems')) || {};
+
+  // 3. Add or update the item in the cart
+  if (cartItems[productName]) {
+    cartItems[productName] += quantity;
+  } else {
+    cartItems[productName] = quantity;
+  }
+
+  // 4. Store updated cart items in local storage
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+  // 5. Update cart count display
+  updateCartCount();
+
+  // 6. (Optional) You can redirect to the checkout page or display a cart summary here.
+  // ... your logic here
+}
+function updateCartCount() {
+  const cartItems = JSON.parse(localStorage.getItem('cartItems')) || {};
+  let totalCount = 0;
+  for (const product in cartItems) {
+    totalCount += cartItems[product];
+  }
+  document.getElementById('cart-count').textContent = totalCount;
+}
+  }
+
 </script>
 </body>
 </html>
