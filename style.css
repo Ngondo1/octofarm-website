@@ -1,126 +1,164 @@
 /* General Styles */
+:root {
+  --primary-color: #cc0000; /* Red */
+  --secondary-color: #f5f5f5; /* Light gray */
+  --text-color: #333; /* Dark gray */
+}
+
 body {
-  font-family: 'Open Sans', sans-serif;
-  margin: 0; /* Remove default margins */
-  padding: 0;
-  background-color: #f5f5f5;
-  line-height: 1.6; /* Improve readability */
+  font-family: 'Playfair Display', serif; /* Elegant serif font for headings */
+  font-size: 18px; 
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: #fff;
+  overflow-x: hidden;
+  scroll-behavior: smooth; /* Smooth scrolling */
 }
 
-/* Link Styles */
-a {
-  color: #333;
-  text-decoration: none;
-  transition: color 0.3s ease; /* Smoother transition */
-}
-
-a:hover {
-  color: #9933cc;
-}
-
-img {
-  max-width: 100%; /* Ensure images don't overflow containers */
-  height: auto;
-}
-
-/* Navigation Bar Styles */
-.navbar {
-  background-color: #fff; /* Light background for navbar */
-  padding: 1rem 0;  
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* More subtle shadow */
-}
-
-.navbar-brand {
-  font-size: 1.5rem; /* Slightly smaller brand name */
-  font-weight: bold;
-}
-
-.navbar-nav .nav-link { 
-  padding: 0.75rem 1rem;
-}
-
-/* Main Content Styles */
-.main-content {
-  padding: 2rem;
-}
-
-/* Header Styles */
-header {
-  background-color: #9933cc; /* Use the purple as the main color */
-  padding: 3rem 0;
-  color: #fff; /* White text on purple background */
-  text-align: center;
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif; /* Modern sans-serif for body text */
+  font-weight: 600;
+  color: var(--primary-color);
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3.7rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+}
+
+h2 {
+  font-size: 3.3rem;
+}
+
+h3 {
+  font-size: 2.7rem;
+}
+
+p {
   margin-bottom: 1rem;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff3333;
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color: var(--primary-color);
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px); /* Add a frosted glass effect */
+}
+
+.navbar-brand {
+  font-family: 'Great Vibes', cursive; /* Elegant cursive font for brand */
+  font-size: 2.5rem;
+  color: #dd150ad7;
+}
+
+.navbar-nav .nav-link {
+  color: #dd150ad7;
+  padding: 1rem 1.5rem;
+  font-weight: 500; /* Slightly bolder links */
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1); 
 }
 
 /* Hero Section */
 .hero {
-  background: url('your-hero-image.jpg') center/cover no-repeat; /* Background image */
-  min-height: 300px; /* Minimum height to showcase the image */
-  display: flex; /* Use flexbox for alignment */
+  background: url('your-hero-image.jpg') center/cover no-repeat;
+  min-height: 500px;
+  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  color: #fff;
 }
 
-.hero-content {  /* Wrap hero content */
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-  padding: 2rem;
-  border-radius: 5px;
+.hero-content {
+  background-color: rgba(87, 16, 16, 0.7); 
+  padding: 3rem 4rem;
+  border-radius: 15px;
+  max-width: 80%;
+  animation: fadeIn 1s ease; /* Fade in animation */
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 /* Content Sections */
 .index, .about-us, .contact, .products {
-  padding: 3rem 2rem; 
-  margin-bottom: 2rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 5rem 4rem;
+  margin-bottom: 4rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); /* Deeper shadow */
   background-color: #fff;
 }
 
-h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #9933cc; 
+/* Product Cards */
+.card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  transition: transform 0.5s ease; /* Slower transition */
+}
+
+
+.card-img-top:hover {
+  transform: scale(1.05); /* Slightly zoom in on hover */
+}
+
 
 /* Call to Action */
 .call-to-action {
-  background-color: #f8f9fa; /* Light gray background */
-  padding: 2rem 0;
+  background-color: #f8f9fa;
+  padding: 3rem 0;
   text-align: center;
 }
 
 .call-to-action a {
-  background-color: #9933cc;
+  background-color: #cc0000;
   color: #fff;
-  padding: 1rem 2rem;
+  padding: 1.2rem 2.5rem; /* Larger button */
   border: none;
-  border-radius: 5px;
+  border-radius: 30px; /* More rounded button */
+  font-size: 1.1rem;
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
-#localTime {
-  font-style: italic;  /* Make the text italic */
-  margin-top: 10px;     /* Add some top margin for spacing */
+
+.call-to-action a:hover {
+  background-color: #ff3333;
 }
 
+/* Footer */
 footer {
-  position: relative;    /* Make the footer a positioning context */
-}
-
-
-#cart-button {
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-#cart-button:focus {
-  outline: none; /* Remove focus outline */
+  background-color: #cc0000;
+  color: #fff;
+  padding: 2rem 0;
+  text-align: center;
 }

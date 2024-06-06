@@ -29,13 +29,37 @@
     </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Cream and Crumble</a> 
-        </div>
-    </nav>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+          <div class="container">
+            <a class="navbar-brand" href="#"><strong><em>Octofarm Checkout - East Africa's Baker's Heart</em></strong></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="products.html">Purchase</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="signin.html">Sign In</a></li>
+                    <li><a class="dropdown-item" href="signup.html">Sign Up</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
 
-    <div class="container mt-5"> 
+
+      <main class="container mt-5">
+        <section class="hero"> 
+          <div class="container"> 
+            <div class="hero-content">    
         <br><br>
         <h1>Shopping Cart</h1>
         <button id="refreshButton" class="btn btn-secondary mb-3">Refresh Cart</button>
@@ -51,8 +75,12 @@
             <h3 id="totalPrice">Total: Ksh 0.00</h3>   <button id="checkoutButton" class="btn btn-primary">Proceed to Complete purchase</button>
         </div>
     </div>
+    </div>
+    </section>
+    </main>
+    <br><br>
 
-    <footer class="footer mt-auto py-3 bg-light">
+    <footer class="container-fluid bg-dark text-light py-3 text-center">
         <div class="container text-center">
             <span class="text-muted">&copy; 2024 Cream and Crumble</span>
             <p>Contact us: <a href="mailto:Octofarmenterprises@gmail.com">info@Octofarmenterprises@gmail.com</a></p>
