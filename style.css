@@ -58,7 +58,7 @@ a:hover { color: #ff3333; }
 /* Hero (Full-Screen) */
 .hero {
   background: url('your-hero-image.jpg') center/cover no-repeat fixed; /* Parallax effect */
-  min-height: 100vh; /* Fill viewport height */
+  min-height: auto; /* Fill viewport height */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -184,6 +184,115 @@ footer a:hover { text-decoration: underline; }
 
 /* ... add more styles for other elements as needed ... */
 
+/* ... (Your existing media query for tablets and up - @media (min-width: 768px)) ... */
+
+@media (max-width: 480px) {  /* Targets smaller phones */
+
+  /* Typography Adjustments */
+  body { 
+      font-size: 14px; 
+      font-weight: 400; /* Slightly lighter font for readability */
+  }
+
+  h1 { 
+      font-size: 1.8rem; 
+      line-height: 1.3;  /* Tighter line-height for headings */
+  }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.2rem; }
+  p { 
+      text-align: justify; 
+      hyphens: auto; /* Enable hyphenation for better text flow */
+  }
+
+  /* Navigation Bar Adjustments */
+  .navbar { 
+      padding: 0.75rem 1rem;
+      flex-direction: column; /* Stack elements vertically */
+      align-items: flex-start;
+  }
+
+  .navbar-brand {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+  }
+
+  .navbar-nav {
+      width: 100%; /* Make nav items full width */
+  }
+
+  .navbar-nav .nav-link {
+      display: block;
+      padding: 0.5rem 1rem;
+      width: 100%; /* Make nav links full width */
+      text-align: left;
+  }
+
+  /* Hero Section Adjustments */
+  .hero {
+      min-height: 35vh; /* Use vh for relative height */
+  }
+
+  .hero-content {
+      padding: 1.5rem 1rem;
+  }
+
+  .hero-title {
+      font-size: 2.2rem; /* Scale title appropriately */
+  }
+
+  /* Content Section Adjustments */
+  .section {
+      padding: 2rem 0.5rem;
+  }
+
+  /* Product Cards */
+  .products {
+      grid-template-columns: 1fr; /* One column layout for smaller screens */
+  }
+
+  .card {
+      margin-bottom: 1.5rem; /* Add vertical spacing between cards */
+  }
+
+  /* Call-to-Action Adjustments */
+  .cta {
+      padding: 2rem 1rem;
+  }
+
+  .cta-button {
+      padding: 0.75rem 1.25rem;
+      font-size: 0.9rem;
+  }
+
+  /* ... (Other adjustments for smaller mobile devices as needed) ... */
+}
+ /* Form Elements */
+ input[type="text"],
+ input[type="email"],
+ textarea,
+ select {
+     width: 100%; /* Make form elements full width */
+     box-sizing: border-box; /* Include padding and border in element's total width and height */
+     margin-bottom: 1rem; 
+ }
+
+ button[type="submit"] {
+     width: 100%; /* Make buttons full width */
+ }
+
+ /* Tables (if applicable) */
+ table {
+     width: 100%;
+     overflow-x: auto; /* Enable horizontal scrolling if table is too wide */
+     display: block; /* Treat table as a block element */
+ }
+
+ button, a {
+     touch-action: manipulation; /* Improve touch response */
+ }
+
+
 /* Media Queries for Larger Screens */
 @media (min-width: 768px) {
   body { font-size: 18px; }
@@ -251,6 +360,7 @@ footer a:hover { text-decoration: underline; }
 @media (min-width: 992px) { /* Desktops and larger */
   h1 { font-size: 4.5rem; }
   h2 { font-size: 3.5rem; }
+  
 
   .hero-content {
       max-width: 70%; /* Slightly smaller content area on very large screens */
@@ -335,4 +445,8 @@ footer a:hover { text-decoration: underline; }
       flex: 1;  /* Distribute space evenly */
       text-align: center;
   }
+}
+
+.some-element {
+  width: auto;
 }
