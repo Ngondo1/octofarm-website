@@ -1,3 +1,7 @@
+<?php
+$pageTitle = "Home"; 
+include_once("db/header.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,24 +17,7 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#"><strong><em>Octofarm - East Africa's Baker's Heart</em></strong></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">About Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="products.html">Purchase </a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-            </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
+
 
   <main class="container py-5">
     <section >

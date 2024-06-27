@@ -1,7 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+   require_once("includes/dbconnection.php");
+   //include_once("templates/heading.php");
+   //include_once("templates/nav.php");
 
-<head>
+   if(isset($_POST["send_message"])){
+    $username = $_POST["username"];
+    $fullname = $_POST["fullname"];
+    $email_address = $_POST["email_address"];
+    $Password = $_POST["Password"];
+    
+
+   // Sanitize input data (VERY IMPORTANT)
+   $username = mysqli_real_escape_string($conn, $username);
+   $fullname = mysqli_real_escape_string($conn, $fullname);
+   $email_address = mysqli_real_escape_string($conn, $email_address);
+   $Password = mysqli_real_escape_string($conn, $Password);
+
+   // Hash the password (VERY IMPORTANT)
+   $hashedPassword = password_hash($Password, PASSWORD_DEFAULT); 
+
+   $insert_message = "INSERT INTO users (username, full_name, email, password) 
+                      VALUES ('$username', '$fullname', '$email_address', '$hashedPassword')"; 
+
+    if($conn->query($sql) === TRUE) {
+      echo "New record created successfully";    
+    }else{
+      echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    $conn->close();
+   }
+
+?>
+  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><strong><em>Contact us - Octofarm: East Africa's bakers heart </em></strong></title>

@@ -1,0 +1,49 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+.navbar {
+    background-color: #007bff !important; /* Octofarm blue */
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.navbar-brand {
+    font-size: 24px; /* Larger brand text */
+}
+
+/* Navigation Links */
+.nav-link {
+    color: white !important; /* White text for nav links */
+    margin-right: 20px; 
+    font-weight: 500; /* Slightly bolder text */
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Dropdown Styling */
+.dropdown-menu {
+    background-color: #f8f9fa; /* Light background for dropdown */
+    border: none;
+}
+
+.dropdown-item {
+    color: #333;
+}
+
+.dropdown-item:hover {
+    background-color: #e2e6ea; /* Light gray hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) { 
+    .navbar-brand {
+        font-size: 20px; /* Adjust for smaller screens */
+    }
+    .nav-link {
+        margin-right: 10px;
+    }
+}
