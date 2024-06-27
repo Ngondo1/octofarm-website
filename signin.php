@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Octofarm - Sign Up</title>
+  <title>Octofarm - Sign In</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ZenhVNpHmPQ0oW9RJr67hE3zYLvFSkl7+uW**,YfT7H9PKlfz4+mW8C2zWJlW" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <header class="header">
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Go live!</a>
+        <a class="navbar-brand" href="index.html"><strong><em>Pick up where you left</em></strong></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,52 +36,57 @@
       </div>
     </nav>
   </header>
+  <script src="loginvalidation.js" defer></script>
 </head>
 
 <body>
 
   <div class="container py-5">
-    <h1 class="text-center mb-4">Go live!</h1>
-    <p>Welcome to Octofarm! To unlock exclusive benefits and a more personalized experience, create a new account today.</p>
+    <h1 class="text-center mb-4">Pick up where you left</h1>
+    <p>Thank you for choosing Octofarm! Please enter your email and password to sign in.</p>
 
-    <form action="process_signup.php" method="post" class="row">
-      <div class="col-md-6 mb-3">
-        <label for="name" class="form-label">Full Name:</label>
-        <input type="text" class="form-control" id="name" name="name" required>
-      </div>
-
-      <div class="col-md-6 mb-3">
-        <label for="username" class="form-label">Username:</label>
-        <input type="text" class="form-control" id="username" name="username" required>
-      </div>
+    <form action="process_signin.php" method="post" class="row">
 
       <div class="col-md-6 mb-3">
         <label for="email" class="form-label">Email Address:</label>
-        <input type="email" class="form-control" id="email" name="email" required>
+        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter your email" required>
+        <div id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</div>
       </div>
 
       <div class="col-md-6 mb-3">
         <label for="password" class="form-label">Password:</label>
-        <input type="password" class="form-control" id="password" name="password" required>
-        <small id="passwordHelp" class="form-text text-muted">Password must be at least 8 characters long and include a mix of uppercase and lowercase letters, numbers, and symbols.</small>
+        <div class="input-group">
+          <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+          <button class="btn btn-outline-secondary" type="button" id="password-toggle">
+            <span class="fas fa-eye-slash" aria-hidden="true"></span>
+          </button>
+        </div>
+        <small id="passwordHelp" class="form-text text-muted">
+          <ul>
+            <li>Password must be at least 8 characters long.</li>
+            <li>Include a mix of uppercase and lowercase letters, numbers, and symbols.</li>
+          </ul>
+        </small>
       </div>
 
-      <div class="col-md-6 mb-3">
-        <label for="confirm_password" class="form-label">Confirm Password:</label>
-        <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
-
       <div class="col-12 d-flex justify-content-between">
-        <button type="submit" class="btn btn-primary">Sign Up</button>
-        <a href="signin.html" class="text-muted">Already have an account? Sign In</a>
+        <button type="submit" class="btn btn-primary" onclick="window.location.href='UsersPage.html'">Sign In</button>
+
+        <a href="signup.html" class="text-muted">Don't have an account? Sign Up</a>
       </div>
     </form>
   </div>
-       <p>Congratulations on completion of the form. </p>
 
-       <footer class="container-fluid bg-light py-3 text-center">
-        <p>&copy; Octofarm Limited 2024</p>
-        <p>&copy; Cream and Crumble 2024</p>
-      </footer>
+  <footer class="container-fluid bg-light py-3 text-center">
+    <p>&copy; Octofarm Limited 2024</p>
+    <p>Contact us: <a href="mailto:Octofarmenterprises@gmail.com">info@Octofarmenterprises@gmail.com</a></p>
+    <p>&copy; Cream and Crumble 2024</p>
+    <script src="time.js" defer></script>
+<p id="localTime"></p>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit-code.js" crossorigin="anonymous"></script>
+  
 
 </body>
 

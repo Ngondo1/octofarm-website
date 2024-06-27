@@ -1,136 +1,539 @@
 /* General Styles */
+:root {
+  --primary: #cc0000;  /* Red */
+  --secondary: #f5f5f5; /* Light gray */
+  --accent: #dd150ad7; /* Purple accent */
+  --text: #333;        /* Dark gray */
+}
+
 body {
-  font-family: 'Open Sans', sans-serif;
-  margin: 6px;
-  padding: 6px;
-  background-color: #f5f5f5;
+  font-family: 'Montserrat', sans-serif;  /* Prioritize readability on mobile */
+  line-height: 1.6;
+  color: var(--text);
+  background-color: #fff;
+  margin: 0;
 }
 
-a {
-  color: #333;
-  text-decoration: none;
-  padding: 10px 15px;
-  font-weight: bold;
-  transition: color 0.8s ease-in-out;
+/* Typography */
+h1, h2, h3 { 
+  font-family: 'Playfair Display', serif; /* Elegant headings for larger screens */
+  font-weight: 600;
+  color: var(--primary);
+  text-align: center; /* Center headings on mobile */
 }
 
-a:hover {
-  color: #9933cc;
-}
+h1 { font-size: 2.5rem; } /* Smaller on mobile */
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+p { margin-bottom: 1rem; }
 
-img {
-  width: 100%;
-  display: block;
-}
+/* Links */
+a { color: var(--primary); text-decoration: none; transition: 0.3s; }
+a:hover { color: #ff3333; }
 
-/* Navigation Bar Styles */
+/* Navigation (Mobile-First) */
 .navbar {
-  background-color: #9c9595;
-  padding: 20px;
-  box-shadow: 0 2px 5px rgba(212, 127, 127, 0.1);
+  background: var(--primary);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between; /* Push brand and toggle apart */
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.navbar-brand {
-  font-size: 1.8rem; /* Adjust brand name size */
-  font-weight: bold;
+.navbar-brand { /* Stylish for bigger screens */
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: var(--accent);
+  margin: 0; /* Remove default margin */
 }
 
-.navbar-nav {
-  ms-auto:  /* Margin for auto-alignment (Bootstrap) */
+.navbar-toggler { /* Bootstrap's menu button */
+  color: var(--accent);
 }
 
-.nav-link {
-  color: #333; /* Consistent text color */
-  padding: 0.5rem 1rem; /* Adjust padding for Bootstrap nav */
-}
-
-.nav-link:hover {
-  color: #9933cc;
-}
-
-.active { /* Style active navbar link (Bootstrap) */
-  color: #9933cc;
-}
-
-/* Main Content Styles */
-.main-content {
-  padding: 20px;
-}
-
-/* Header Styles */
-header {
-  background-color: #f1e7e7;
-  padding: 20px;
-  box-shadow: 0 2px 5px rgba(15, 13, 13, 0.1);
-}
-
-h1 {
-  font-size: 2.5em; /* Larger headline */
-  margin: 7px;
-  color: #333; /* Dark gray for headline */
-}
-
-/* Hero Section */
+/* Hero (Full-Screen) */
 .hero {
+  background: url('your-hero-image.jpg') center/cover no-repeat fixed; /* Parallax effect */
+  min-height: auto; /* Fill viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 50px;
-  background-color: #9933cc;
   color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Readability on image */
+  position: relative; /* For overlay positioning */
 }
 
-.hero img {
-  max-width: 100%; /* Adjust image size as needed */
+.hero::before { /* Gradient overlay */
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(rgba(237, 231, 231, 0.5), rgba(0,0,0,0)); /* Transparent at bottom */
 }
 
 /* Content Sections */
-.index,
-.about-us,
-.contact,
-.products {
-  color: #333; /* Dark gray for text */
-  margin: 50px 0; /* Adjust margin for spacing */
-  padding: 30px;
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(114, 71, 71, 0.1); /* Subtle shadow */
-  background-color: #e7dde7ee; /* White background for content sections */
-}
-
-
-h2 {
-  font-size: 1.8em; /* Larger section titles */
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  color: #9933cc; /* Same rich purple for section titles */
-}
-
-/* Call to Action (Optional) */
-.call-to-action {
+.section { /* Generic class for sections */
+  padding: 2rem 1rem; /* Mobile-friendly padding */
   text-align: center;
-  padding: 20px;
-  background-color: #da8b8b; /* Light  background */
+  background: var(--secondary);
+  margin-bottom: 2rem;
 }
 
-.call-to-action a {
-  background-color: #9933cc; /* Rich purple button */
-  color: #fff; /* White text for better contrast */
-  padding: 10px 20px;
-  border:#9933cc;
-  border-radius: 3px; /* Rounded corners for button */
-  font-weight: bold;
-  transition: background-color 0.3s ease-in-out;
-}
+.section h2 { font-size: 1.8rem; }
+.section p { text-align: justify; } /* Readable paragraphs */
 
-/* Content Sections (Improved Readability) */
-.index,
-.about-us,
-.contact,
+/* Cards (Grid Layout) */
 .products {
-  padding-top: 2.5rem; /* Add some top padding for content */
-  padding-bottom: 2.5rem; /* Add some bottom padding for content */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 1rem;
 }
 
-.about-us p,
-.contact p,
-.products p {
-  line-height: 1.9; 
+.card { 
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.card-img-top {
+  height: 200px; /* Consistent image height */
+  object-fit: cover; /* Crop to fit */
+}
+
+
+/* ... (rest of your code for call to action, footer, cart, etc.) */
+.cta {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 2rem 1rem; /* Mobile-friendly padding */
+  text-align: center;
+}
+
+.cta-button {
+  background-color: #fff;
+  color: var(--primary);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--secondary);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+  background-color: #333; /* Dark gray footer */
+  color: #fff;
+  padding: 2rem 1rem; /* Mobile-friendly padding */
+  text-align: center;
+}
+
+footer a { color: #fff; }
+footer a:hover { text-decoration: underline; }
+
+/* Cart Button */
+#cart-button {
+  position: fixed;  /* Fix the button to the bottom right */
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--primary);
+  color: #fff;
+  padding: 1rem;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1001; /* Make sure it's above other elements */
+  transition: transform 0.3s ease;
+}
+
+#cart-button:hover {
+  transform: scale(1.1);
+}
+
+#cart-count {
+  font-weight: bold;
+}
+
+/* Other Elements (Adjust as needed) */
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.feature-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 1rem;
+}
+
+.feature-item {
+  text-align: center;
+}
+
+/* ... add more styles for other elements as needed ... */
+
+/* ... (Your existing media query for tablets and up - @media (min-width: 768px)) ... */
+
+@media (max-width: 480px) {  /* Targets smaller phones */
+
+  /* Typography Adjustments */
+  body { 
+      font-size: 14px; 
+      font-weight: 400; /* Slightly lighter font for readability */
+  }
+
+  h1 { 
+      font-size: 1.8rem; 
+      line-height: 1.3;  /* Tighter line-height for headings */
+  }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.2rem; }
+  p { 
+      text-align: justify; 
+      hyphens: auto; /* Enable hyphenation for better text flow */
+  }
+
+  /* Navigation Bar Adjustments */
+  .navbar { 
+      padding: 0.75rem 1rem;
+      flex-direction: column; /* Stack elements vertically */
+      align-items: flex-start;
+  }
+
+  .navbar-brand {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+  }
+
+  .navbar-nav {
+      width: 100%; /* Make nav items full width */
+  }
+
+  .navbar-nav .nav-link {
+      display: block;
+      padding: 0.5rem 1rem;
+      width: 100%; /* Make nav links full width */
+      text-align: left;
+  }
+
+  /* Hero Section Adjustments */
+  .hero {
+      min-height: 35vh; /* Use vh for relative height */
+  }
+
+  .hero-content {
+      padding: 1.5rem 1rem;
+  }
+
+  .hero-title {
+      font-size: 2.2rem; /* Scale title appropriately */
+  }
+
+  /* Content Section Adjustments */
+  .section {
+      padding: 2rem 0.5rem;
+  }
+
+  /* Product Cards */
+  .products {
+      grid-template-columns: 1fr; /* One column layout for smaller screens */
+  }
+
+  .card {
+      margin-bottom: 1.5rem; /* Add vertical spacing between cards */
+  }
+
+  /* Call-to-Action Adjustments */
+  .cta {
+      padding: 2rem 1rem;
+  }
+
+  .cta-button {
+      padding: 0.75rem 1.25rem;
+      font-size: 0.9rem;
+  }
+
+  /* ... (Other adjustments for smaller mobile devices as needed) ... */
+}
+ /* Form Elements */
+ input[type="text"],
+ input[type="email"],
+ textarea,
+ select {
+     width: 100%; /* Make form elements full width */
+     box-sizing: border-box; /* Include padding and border in element's total width and height */
+     margin-bottom: 1rem; 
+ }
+
+ button[type="submit"] {
+     width: 100%; /* Make buttons full width */
+ }
+
+ /* Tables (if applicable) */
+ table {
+     width: 100%;
+     overflow-x: auto; /* Enable horizontal scrolling if table is too wide */
+     display: block; /* Treat table as a block element */
+ }
+
+ button, a {
+     touch-action: manipulation; /* Improve touch response */
+ }
+
+
+/* Media Queries for Larger Screens */
+@media (min-width: 768px) {
+  body { font-size: 18px; }
+  h1 { font-size: 4rem; }
+  h2 { font-size: 3rem; }
+  .navbar { padding: 1.5rem; }
+  .section { padding: 4rem 3rem; }
+  .cta { padding: 3rem; }
+  footer { padding: 2.5rem; }
+}
+
+/* Larger Screen Enhancements (Media Queries) */
+@media (min-width: 768px) { /* Tablets and larger */
+  body { 
+      font-size: 18px; 
+  }
+  
+  h1 { font-size: 4rem; }
+  h2 { font-size: 3rem; }
+  h3 { font-size: 2.2rem; }
+  p { text-align: left; } /* Align text left on larger screens */
+
+  .navbar {
+      padding: 1.5rem 2rem;
+      justify-content: flex-start; /* Align to left */
+  }
+
+  .navbar-brand {
+      font-size: 2.5rem; /* Larger brand size on larger screens */
+  }
+
+  .hero { 
+      min-height: 600px; /* Adjust hero height for larger screens */
+  }
+
+  .section { 
+      padding: 5rem 4rem; 
+  }
+
+  /* Product Cards */
+  .products {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Wider columns */
+  }
+
+  .card-body {
+      padding: 2rem; /* More spacious cards */
+  }
+
+  /* Call to Action */
+  .cta {
+      padding: 4rem 3rem; 
+  }
+
+  .cta-button {
+      padding: 1.2rem 3rem;
+      font-size: 1.2rem;
+  }
+
+  /* Footer */
+  footer {
+      padding: 3rem 2rem;
+  }
+}
+
+@media (min-width: 992px) { /* Desktops and larger */
+  h1 { font-size: 4.5rem; }
+  h2 { font-size: 3.5rem; }
+  
+
+  .hero-content {
+      max-width: 70%; /* Slightly smaller content area on very large screens */
+  }
+}
+
+
+@media (min-width: 992px) { /* Desktops and larger */
+  body { 
+      font-size: 20px; /* Larger base font size for better readability */
+  }
+
+  h1 { 
+      font-size: 5rem; /* More impactful headings */
+      margin-bottom: 2rem;
+  }
+
+  h2 { 
+      font-size: 3.5rem;
+  }
+
+  .container { /* Assuming you have a main container */
+      max-width: 1200px; /* Set a max-width for better content flow */
+      margin: 0 auto;  /* Center the container */
+  }
+
+  .navbar {
+      padding: 1.5rem 3rem; /* More padding for a spacious feel */
+  }
+
+  .navbar-nav {
+      margin-left: auto; /* Push navigation to the right */
+  }
+
+  .hero {
+      min-height: 700px; /* Even taller hero on large screens */
+  }
+
+  .hero-content {
+      max-width: 60%; /* Slightly smaller content area for balance */
+      padding: 4rem 5rem; /* More padding for a luxurious feel */
+  }
+
+  .section {
+      padding: 6rem 5rem;
+      margin-bottom: 5rem; /* More spacing between sections */
+  }
+
+  /* Product Cards */
+  .products {
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Wider cards */
+      gap: 2rem; /* More spacing between cards */
+  }
+
+  .card-body {
+      padding: 2.5rem;
+  }
+
+  .card-title {
+      font-size: 1.8rem; /* Larger card titles */
+  }
+
+  /* Call to Action */
+  .cta {
+      padding: 5rem; 
+  }
+
+  .cta-button {
+      padding: 1.5rem 3.5rem;
+      font-size: 1.4rem;
+  }
+
+  /* Footer */
+  footer {
+      padding: 3.5rem 0;
+      display: flex; /* Flexbox for advanced layout */
+      justify-content: space-around; /* Evenly distribute footer content */
+      align-items: center;
+  }
+
+  footer > * {  /* Style direct children of the footer */
+      flex: 1;  /* Distribute space evenly */
+      text-align: center;
+  }
+}
+
+.some-element {
+  width: auto;
+}
+
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif; /* Choose a clear font */
+  line-height: 1.6; /* Improve readability */
+  background-color: #f4f4f4; /* Light background */
+  color: #333; /* Darker text for contrast */
+}
+
+.container {
+  max-width: 960px; /* Limit container width for better readability on large screens */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+/* Form Styles */
+#registrationForm {
+  background-color: #fff; /* White background for the form */
+  padding: 30px;
+  border-radius: 8px; /* Add rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#registrationForm label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+#registrationForm input[type="text"],
+#registrationForm input[type="email"],
+#registrationForm input[type="password"] {
+  width: calc(100% - 22px);  /* Account for padding */
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd; /* Lighter border */
+  border-radius: 4px; /* Rounded corners for inputs */
+}
+
+#registrationForm button[type="submit"] {
+  background-color: #007bff; /* Primary blue color */
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 4px; /* Rounded corners for button */
+  cursor: pointer;
+  font-size: 16px; /* Slightly larger font */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+#registrationForm button[type="submit"]:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f5f5f5; /* Light gray background for headers */
+}
+
+/* Error Message Styles */
+.error-message {
+  color: #dc3545; /* Bootstrap danger color for error messages */
+  font-weight: bold;
+}
+
+/* Responsive Styles (for smaller screens) */
+@media (max-width: 768px) { 
+  #registrationForm {
+      width: 90%; /* Make form narrower on small screens */
+  }
 }
