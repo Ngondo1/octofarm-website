@@ -1,70 +1,26 @@
+<?php
+$pageTitle = "Freshly Baked Products - Octofarm: East Africa's bakers heart"; 
+include_once("db/header2.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freshly Baked Products - Octofarm: East Africa's bakers heart</title>
-    <meta name="description" content="Discover Octofarm's delicious range of freshly baked goods, including cake slices, sweet mandazi, and more, all crafted with the finest ingredients.">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="shoppingcart.js" defer></script>
-    
-    
-</head>
 
 <body>
    
-    <header class="header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="#"><strong><em>Octofarm - East Africa's Baker's Heart</em></strong></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-<ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="products.html">Baked Goods</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                        <li class="nav-item">
-                            <a class="nav-link cart-icon" href="#">
-                                <button id="cart-button" onclick="window.location.href='checkout.html'">
-                                    <i class="fas fa-shopping-cart"></i>
-                                    <span id="cart-count">0</span>
-                                  </button>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="container">
-                        <form class="d-flex mt-3" role="search">
-                          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                          <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                        <div class="mt-3">
-                          <label for="minPrice">Min Price:</label>
-                          <input type="number" id="minPrice" class="form-control" value="0">
-                          <label for="maxPrice">Max Price:</label>
-                          <input type="number" id="maxPrice" class="form-control" value="1000">
-                        </div>
-                      </div>
-                      
-        </nav>
-    </header>
-
     <main class="container">
         <section>
         <section class="products container ">
-            <h2>Welcome to Cream and Crumble!</h2>
+            <h2><br><em>KARIBU SANA!</em></h2>
             <br><br>
             <p class="lead text-muted"><strong>Indulge in our delectable treats, crafted with the finest ingredients and a <em>dash of love.</em></strong></p>
             <br><br>
             
             
             
-            <div class="product-item">
+            <div width="100%"   class="product-item">
             <div class="col">
                 <div class="card shadow border-primary">
                     <img src="pexels-abhinavcoca-291528.jpg" class="card-img-top img-fluid" alt="Cake Slices">
@@ -79,7 +35,7 @@
                         </div>
             
                         <p class="text-muted">Price: Ksh <span id="price-cake">70</span></p> 
-                        <button id="demo1" class="btn btn-primary mt-3" onclick="window.location.href='checkout.html'">Order now!</button> 
+                        <button id="demo1" class="btn btn-primary mt-3" onclick="window.location.href='checkout.php'">Order now!</button> 
                     </div>
                 </div>
              </div><br><br><br><br>
@@ -89,7 +45,7 @@
 
             
         
-             <div class="product-item">
+             <div width="100%"  class="product-item">
              <div class="col">
                 <div class="card shadow border-primary">
                     <img src="https://imgur.com/gallery/sweet-mandazi-YcsB4Qh" class="card-img-top img-fluid" alt="Sweet Mandazi image">
@@ -104,7 +60,7 @@
                         </div>
             
                         <p class="text-muted">Price: Ksh <span id="price-mandazi">60</span></p> 
-                        <button id="demo2" class="btn btn-primary mt-3" onclick="window.location.href='checkout.html'">Order now!</button>
+                        <button id="demo2" class="btn btn-primary mt-3" onclick="window.location.href='checkout.php'">Order now!</button>
                     </div>
                 </div>
             </div><br><br><br><br>
@@ -118,7 +74,7 @@
             <div class="product-item">
             <div class="col">
                 <div class="card shadow border-primary">
-                    <img src="pexels-castorlystock-3650436.jpg" class="card-img-top img-fluid" alt="plain/chocolate Muffins image">
+                    <img src="muffins.jpg" class="card-img-top img-fluid" alt="plain/chocolate Muffins image">
                     <div class="card-body">
                         <h2 class="card-title"><em>Muffins</em></h2>
                         <p class="text-muted">Enjoy our delightful Muffins, perfect for a sweet snack!<br><br> A nutritious snack for tea break.</p><br>
@@ -131,7 +87,7 @@
                         </div>
             
                         <p class="text-muted">Price: Ksh <span id="price-muffins">50</span></p> 
-                        <button id="demo3" class="btn btn-primary mt-3" onclick="window.location.href='checkout.html'">Order now!</button>
+                        <button id="demo3" class="btn btn-primary mt-3" onclick="window.location.href='checkout.php'">Order now!</button>
                     </div>
                 </div>
             </div><br><br><br><br>
@@ -144,7 +100,7 @@
             <div class="product-item">
             <div class="col">
                 <div class="card shadow border-primary">
-                    <img src="pexels-darkou-10563880.jpg" class="card-img-top img-fluid" alt="queencakes image">
+                    <img src="queencakes.jpg" class="card-img-top img-fluid" alt="queencakes image">
                     <div class="card-body">
                         <h2 class="card-title"><em>Queencakes</em></h2>
                         <p class="text-muted">Enjoy our delightful Queencakes, perfect for a sweet snack!<br><br> A nutritious snack for tea break.<br><br> For customer convinience, they are available in a packets of six!</p>
@@ -156,7 +112,7 @@
                         </div>
             
                         <p class="text-muted">Price: Ksh <span id="price-queencakes">100</span></p> 
-                        <button id="demo4" class="btn btn-primary mt-3" onclick="window.location.href='checkout.html'">Order now!</button>
+                        <button id="demo4" class="btn btn-primary mt-3" onclick="window.location.href='checkout.php'">Order now!</button>
                     </div>
                 </div>
             </div><br><br><br><br>
@@ -190,7 +146,7 @@
                             </select>
                         
                         </div>
-                        <button id="demo5" class="btn btn-primary mt-3" onclick="window.location.href='checkout.html'">Order now!</button>
+                        <button id="demo5" class="btn btn-primary mt-3" onclick="window.location.href='checkout.php'">Order now!</button>
                     </div>
                 </div>
             </div><br><br><br><br>
@@ -383,14 +339,10 @@ function updateOrder(productName, basePrice) {
 
 
    
-    <footer class="container-fluid bg-dark text-light py-3 text-center">
-        <p>&copy; Octofarm Limited 2024</p>
-        <p>Contact us: <a href="mailto:Octofarmenterprises@gmail.com">info@Octofarmenterprises@gmail.com</a></p>
-        <p>&copy; Cream and Crumble 2024</p>
-        <script src="time.js" defer></script>
-    <p id="localTime"></p>
-    </footer>
-    <button onclick="window.print()">Print this page</button>
+<?php
+include_once("db/footer.php");
+?>
+    <button height="80"  onclick="window.print()">Print this page</button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 

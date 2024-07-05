@@ -1,41 +1,13 @@
+<?php
+$pageTitle = "Octofarm - Sign In";
+include_once("db/header2.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Octofarm - Sign In</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ZenhVNpHmPQ0oW9RJr67hE3zYLvFSkl7+uW**,YfT7H9PKlfz4+mW8C2zWJlW" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <header class="header">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"><strong><em>Pick up where you left</em></strong></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav flex-column ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="about.html">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="products.html">Baked Goods</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
   <script src="loginvalidation.js" defer></script>
 </head>
 
@@ -77,14 +49,9 @@
     </form>
   </div>
 
-  <footer class="container-fluid bg-light py-3 text-center">
-    <p>&copy; Octofarm Limited 2024</p>
-    <p>Contact us: <a href="mailto:Octofarmenterprises@gmail.com">info@Octofarmenterprises@gmail.com</a></p>
-    <p>&copy; Cream and Crumble 2024</p>
-    <script src="time.js" defer></script>
-<p id="localTime"></p>
-  </footer>
-
+  <?php
+include_once("db/footer.php");
+?>
   <script src="https://kit.fontawesome.com/your-fontawesome-kit-code.js" crossorigin="anonymous"></script>
   
 

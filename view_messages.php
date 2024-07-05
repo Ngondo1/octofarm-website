@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Home"; 
-include_once("db/header.php");
+include_once("db/header2.php");
 ?>
 
 
@@ -16,15 +16,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fullname = $_POST["fullname"];
     $email = filter_var($_POST["email_address"], FILTER_SANITIZE_EMAIL); // Sanitize email
     $password = password_hash($_POST["Password"], PASSWORD_DEFAULT); // Hash password
+    $role = $_POST["role"];
   // Retrieve and sanitize form data
     $username = htmlspecialchars($_POST["username"]);
     $fullname = htmlspecialchars($_POST["fullname"]);
     $email = filter_var($_POST["email_address"], FILTER_SANITIZE_EMAIL);
     $password = password_hash($_POST["Password"], PASSWORD_DEFAULT); // Hash the password
+    $role = htmlspecialchars($_POST["role"]);
 
     // Insert data into the database (using prepared statements)
-    $insertStmt = $conn->prepare("INSERT INTO OnlineUsers (Username, Fullname, Email, password) VALUES (?, ?, ?, ?)");
-    $insertStmt->bind_param("ssss", $username, $fullname, $email, $password);
+    $insertStmt = $conn->prepare("INSERT INTO OnlineUsers (Username, Fullname, Email, password, role) VALUES (?, ?, ?, ?, ?)");
+    $insertStmt->bind_param("sssss", $username, $fullname, $email, $password, $role);
 
     if ($insertStmt->execute()) {
         // Success: Redirect or display a message
@@ -39,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // Prepare the statement for selecting user data
-$selectStmt = $conn->prepare("SELECT Username, Fullname, Email, LastUpdated FROM OnlineUsers");
+$selectStmt = $conn->prepare("SELECT  Username, Fullname, Email, password, role, LastUpdated FROM OnlineUsers");
 
 // Execute the select statement
 $selectStmt->execute();
@@ -62,12 +64,12 @@ if ($result->num_rows > 0) {
         }
         </style>";
 
-    echo "<h2>Online Users</h2>";
+    echo "<h2>Users</h2>";
     echo "<table>";
-    echo "<tr><th>Username</th><th>Full Name</th><th>Email</th><th>Last Updated</th></tr>";
+    echo "<tr><th>Username</th><th>Full Name</th><th>Email</th><th>password</th><th>Last Updated</th><th>modify/delete</th><th>Role</th></tr>";
 
     while ($row = $result->fetch_assoc()) {
-        echo "<tr>";
+        echo "<tr>";       
         echo "<td>" . htmlspecialchars($row["Username"]) . "</td>";
         echo "<td>" . htmlspecialchars($row["Fullname"]) . "</td>";
         echo "<td>" . htmlspecialchars($row["Email"]) . "</td>";
@@ -85,7 +87,10 @@ if ($result->num_rows > 0) {
         echo "<a href='modify.php?id=" . htmlspecialchars($row["Username"]) . "'>Modify</a> | ";
         echo "<a href='delete.php?id=" . htmlspecialchars($row["Username"]) . "' onclick='return confirm(\"Are you sure you want to delete?\");'>Delete</a>";
         echo "</td>";
+        echo "<td>" . htmlspecialchars($row["role"]) . "</td>";
         echo "</tr>";
+
+       
     }
     
 
@@ -97,4 +102,8 @@ if ($result->num_rows > 0) {
 // 4. Close Resources
 $selectStmt->close();
 $conn->close();
+?>
+<br><br>
+<?php
+include_once("db/footer.php");
 ?>

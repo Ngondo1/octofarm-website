@@ -1,7 +1,7 @@
 <?php
    require_once("includes/dbconnection.php");
-   //include_once("templates/heading.php");
-   //include_once("templates/nav.php");
+   include_once("db/header2.php");
+
 
    if(isset($_POST["send_message"])){
     $username = $_POST["username"];
@@ -41,23 +41,7 @@
 
 <body>
 
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <div class="container py-3">
-      <h1><strong><em>Welcome to Octofarm: Contact us here</em></strong></h1>
-      <nav class="nav justify-content-end">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="products.html">Purchase</a>
-        <a class="nav-link" href="about.html">About Us</a>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="signin.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Account
-          </a>
-       
-        </li>
-      </nav>
-    </div>
-  </header>
+ 
 
   <main class="container mt-5">
     <section class="contact p-5 rounded shadow bg-light">
@@ -109,13 +93,9 @@
     });
     </script>
     
-  <footer class="container-fluid bg-dark text-light py-3 text-center">
-    <p>&copy; Octofarm 2024</p>
-    <p>Contact us: <a href="mailto:Octofarmenterprises@gmail.com">info@Octofarmenterprises@gmail.com</a></p>
-    <p>&copy; Cream and Crumble 2024</p>
-    <script src="time.js" defer></script>
-    <p id="localTime"></p>
-  </footer>
+<?php
+include_once("db/footer.php");
+?>
 </body>
 
 </html>

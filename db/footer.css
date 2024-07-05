@@ -1,0 +1,14 @@
+/* Footer */
+footer {
+    padding: 3.5rem 0;
+    display: flex; /* Flexbox for advanced layout */
+    justify-content: space-around; /* Evenly distribute footer content */
+    align-items: center;
+    height:250px;
+}
+
+footer > * {  /* Style direct children of the footer */
+    flex: 1;  /* Distribute space evenly */
+    text-align: center;
+    height:250px;
+}

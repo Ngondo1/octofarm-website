@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Home"; 
-include_once("db/header.php");
+include_once("db/header2.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,20 +13,18 @@ include_once("db/header.php");
  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  >
+  
 </head>
 
 <body>
 
-
+<?php
+include_once("db/index's_main.php");
+?>
   <main class="container py-5">
     <section >
       <div class="row">
-        <div class="col-md-6 order-md-2">        
-          <img src="THE STREET CHILD.jpg" alt="Our team at Octofarm" class="img-fluid">
-          <br><br>
-          <img src="the packaging.jpg" alt="Our team at Octofarm" class="img-fluid">
-          </div>
+
           <div class="col-md-6 order-md-1">
           <div >
           <h2>Our Mission</h2>
