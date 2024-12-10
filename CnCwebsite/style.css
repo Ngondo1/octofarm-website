@@ -1,0 +1,51 @@
+/* General Styles */
+body {
+    font-family: 'Helvetica Neue', sans-serif; /* Modern sans-serif font */
+}
+
+/* Navbar */
+#navbar {
+    background-color: #F8E8D2 !important; /* Light beige background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#navbar .navbar-brand {
+    font-weight: bold;
+    color: #876445; /* Warm brown for logo/brand */
+}
+
+/* Home Page */
+#home {
+    background-image: url("C:\Users\ngond\OneDrive - Strathmore University\octofarm website\CnCwebsite\Hero_image.jpg"); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    min-height: 400px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+/* Product Page */
+#products .card {
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#products .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Purchase, Clients, Roles, Checkout, Sign In, Log In Pages */
+/* Style these sections with appropriate background colors, typography, etc. */
+#purchase, #clients, #roles, #checkout, #signIn, #logIn {
+    padding: 30px;
+}
+
+/* Footer */
+#footer {
+    background-color: #876445;
+    color: white;
+}
